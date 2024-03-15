@@ -1,8 +1,8 @@
 const Menu: React.FC = () => {
     return (
-        <>
-
-        </>
+        <ul>
+            
+        </ul>
     )
 }
 
