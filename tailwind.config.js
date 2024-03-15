@@ -6,6 +6,8 @@ export default {
       colors: {
         yellowColor: "#ffb400",
         darkColor: "#111111",
+        darkBrown: "#252525",
+        lightBrown: "#333333",
       },
     },
     screens: {
