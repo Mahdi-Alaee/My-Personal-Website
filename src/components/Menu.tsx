@@ -17,7 +17,7 @@ const Menu: React.FC<MenuProps> = ({ isMenuOpen }) => {
       className={`absolute top-0 right-0 left-0 bottom-0 pt-16 px-8 bg-darkBrown text-white 
      text-lg duration-500 sm:text-2xl ${
        isMenuOpen ? "" : "-left-96 right-[100vw]"
-     } lg:bg-transparent lg:right-1 lg:w-60 lg:h-auto lg:text-lg lg:top-48 lg:left-auto lg:flex lg:flex-col lg:items-end`}
+     } lg:bg-transparent lg:right-0 lg:w-60 lg:h-auto lg:text-lg lg:top-16 lg:left-auto lg:flex lg:flex-col lg:items-end`}
     >
       <Link
         className="group flex items-center gap-x-4 py-4 border-b duration-200 border-lightBrown last:border-none 

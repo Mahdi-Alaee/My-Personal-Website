@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Menu from "./components/Menu";
 import MenuButton from "./components/MenuButton";
+import ThemeButton from "./components/ThemeButton";
 
 const App: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true); // setIsMenuOpen
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // setIsMenuOpen
 
   return (
     <div
@@ -18,6 +19,9 @@ const App: React.FC = () => {
 
       {/* menu button */}
       <MenuButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+
+      {/* Theme Button */}
+      <ThemeButton />
     </div>
   );
 };
