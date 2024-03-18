@@ -1,13 +1,18 @@
-import { useState } from "react";
-import Menu from "./components/Menu";
+import { useEffect, useState } from "react";
+import Menu from "./components/Menu/Menu";
 import MenuButton from "./components/MenuButton";
 import ThemeButton from "./components/ThemeButton";
-import { useRoutes } from "react-router-dom";
+import { useLocation, useRoutes } from "react-router-dom";
 import { routes } from "./Routes";
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // setIsMenuOpen
   const router = useRoutes(routes);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <div
@@ -27,7 +32,7 @@ const App: React.FC = () => {
       <ThemeButton />
 
       {/* pages */}
-      {router}
+      <div className="relative z-10">{router}</div>
     </div>
   );
 };
