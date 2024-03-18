@@ -32,7 +32,7 @@ const Menu: React.FC<MenuProps> = ({ isMenuOpen }) => {
       <Link
         className="group flex items-center gap-x-4 py-4 border-b duration-200 border-lightBrown last:border-none 
         hover:gap-x-4 sm:gap-x-6 sm:py-5 lg:flex-row-reverse lg:border-none lg:gap-0 lg:py-0 lg:my-3 lg:hover:bg-yellowColor lg:rounded-full"
-        to="/"
+        to="/about"
       >
         <div className="lg:bg-lightBrown lg:p-4 lg:rounded-full duration-200 lg:group-hover:bg-yellowColor">
           <FaUser />
@@ -42,7 +42,7 @@ const Menu: React.FC<MenuProps> = ({ isMenuOpen }) => {
       <Link
         className="group flex items-center gap-x-4 py-4 border-b duration-200 border-lightBrown last:border-none 
         hover:gap-x-4 sm:gap-x-6 sm:py-5 lg:flex-row-reverse lg:border-none lg:gap-0 lg:py-0 lg:my-3 lg:hover:bg-yellowColor lg:rounded-full"
-        to="/"
+        to="/portfolio"
       >
         <div className="lg:bg-lightBrown lg:p-4 lg:rounded-full duration-200 lg:group-hover:bg-yellowColor">
           <FaBriefcase />
@@ -52,7 +52,7 @@ const Menu: React.FC<MenuProps> = ({ isMenuOpen }) => {
       <Link
         className="group flex items-center gap-x-4 py-4 border-b duration-200 border-lightBrown last:border-none 
         hover:gap-x-4 sm:gap-x-6 sm:py-5 lg:flex-row-reverse lg:border-none lg:gap-0 lg:py-0 lg:my-3 lg:hover:bg-yellowColor lg:rounded-full"
-        to="/"
+        to="/contact"
       >
         <div className="lg:bg-lightBrown lg:p-4 lg:rounded-full duration-200 lg:group-hover:bg-yellowColor">
           <FaEnvelopeOpen />
@@ -62,7 +62,7 @@ const Menu: React.FC<MenuProps> = ({ isMenuOpen }) => {
       <Link
         className="group flex items-center gap-x-4 py-4 border-b duration-200 border-lightBrown last:border-none 
         hover:gap-x-4 sm:gap-x-6 sm:py-5 lg:flex-row-reverse lg:border-none lg:gap-0 lg:py-0 lg:my-3 lg:hover:bg-yellowColor lg:rounded-full"
-        to="/"
+        to="/blog"
       >
         <div className="lg:bg-lightBrown lg:p-4 lg:rounded-full duration-200 lg:group-hover:bg-yellowColor">
           <FaComments />
