@@ -20,7 +20,9 @@ const App: React.FC = () => {
       className="relative bg-darkColor text-white min-h-screen overflow-hidden"
     >
       {/* background shape */}
-      <div className="absolute bg-yellowColor h-screen w-1/4 skew-x-12 -left-36 hidden lg:block"></div>
+      {location.pathname === "/" && (
+        <div className="absolute bg-yellowColor h-screen skew-x-12 -left-36 hidden lg:block lg:w-4/12 xxl:w-3/12"></div>
+      )}
 
       {/* menu */}
       <Menu isMenuOpen={isMenuOpen} />

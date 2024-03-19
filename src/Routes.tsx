@@ -4,5 +4,5 @@ import About from "./pages/About";
 
 export const routes: RouteObject[] = [
   { path: "", element: <Index /> },
-  { path: "/about", element: <About /> },
+  { path: "/about", element: <About /> }
 ];
