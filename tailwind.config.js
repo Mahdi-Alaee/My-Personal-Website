@@ -9,6 +9,9 @@ export default {
         darkBrown: "#252525",
         lightBrown: "#333333",
       },
+      fontFamily:{
+      sans: ['poppins', 'sans-serif']
+      }
     },
     screens: {
       sm: "576px",
