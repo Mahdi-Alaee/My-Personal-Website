@@ -1,5 +1,5 @@
 import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import LinkButton from "../components/LinkButton";
 
 const Index: React.FC = () => {
   return (
@@ -36,23 +36,9 @@ const Index: React.FC = () => {
           building excellent software that improves the lives of those around
           me.
         </p>
-        <Link
-          className="group relative flex mt-5 pl-8 border border-yellowColor gap-x-5 
-          items-center rounded-full overflow-hidden"
-          to="/about"
-        >
-          <span className="block font-bold tracking-tighter">
-            MORE ABOUT ME
-          </span>
-          <span className="block bg-yellowColor p-4 rounded-full">
-            <FaArrowRight className="text-xl" />
-          </span>
-          {/* background hover */}
-          <div
-            className="absolute w-0 h-full right-0 bg-yellowColor -z-10 transition-all 
-          duration-300 group-hover:w-full"
-          ></div>
-        </Link>
+        <LinkButton to="/about" icon={<FaArrowRight />}>
+          MORE ABOUT ME
+        </LinkButton>
       </div>
     </div>
   );
