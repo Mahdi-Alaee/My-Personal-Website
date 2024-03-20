@@ -4,19 +4,20 @@ import { Link } from "react-router-dom";
 interface LinkButtonProps {
     to:string;
     icon: React.ReactNode;
+    className?: string;
 }
 
-const LinkButton: React.FC<PropsWithChildren<LinkButtonProps>> = ({to, icon, children}) => {
+const LinkButton: React.FC<PropsWithChildren<LinkButtonProps>> = ({to, icon, children, className}) => {
     return (
         <Link
-          className="group relative flex mt-5 pl-8 border border-yellowColor gap-x-5 
-          items-center rounded-full overflow-hidden"
+          className={`group relative flex mt-5 pl-8 border border-yellowColor gap-x-5 
+          items-center rounded-full py-4 overflow-hidden uppercase pr-16 ${className}`}
           to={to}
         >
           <span className="block font-bold tracking-tighter">
             {children}
           </span>
-          <span className="block bg-yellowColor p-4 rounded-full">
+          <span className="absolute right-0 block bg-yellowColor p-5 rounded-full">
             {icon}
           </span>
           {/* background hover */}

@@ -36,6 +36,7 @@ const Index: React.FC = () => {
           building excellent software that improves the lives of those around
           me.
         </p>
+        {/* bottom button link */}
         <LinkButton to="/about" icon={<FaArrowRight />}>
           MORE ABOUT ME
         </LinkButton>
