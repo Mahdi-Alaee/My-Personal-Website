@@ -21,7 +21,7 @@ const About: React.FC = () => {
           className="fixed z-10 text-3xl p-5 w-full left-0 right-0  top-0 m-auto 
            flex items-center bg-darkBrown sm:absolute sm:bottom-0 sm:w-max sm:text-6xl sm:bg-transparent"
         >
-          <span>About</span>{' '}<span className="text-yellowColor">Me</span>
+          <span>About</span> <span className="text-yellowColor">Me</span>
         </div>
       </h1>
       {/* personal infos */}
@@ -79,8 +79,14 @@ const About: React.FC = () => {
               </Link>
             </p>
             <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
-              <span className="opacity-80">Freelance :</span>{" "}
-              <span className="font-semibold">iran/tehran</span>
+              <span className="opacity-80">Instagram :</span>{" "}
+              <Link
+                to="https://www.instagram.com/mahdi.alaee1/"
+                target="_blank"
+                className="font-semibold text-blue-500"
+              >
+                mahdi.alaee1
+              </Link>
             </p>
             <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
               <span className="opacity-80">Language :</span>{" "}
