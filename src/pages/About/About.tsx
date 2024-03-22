@@ -72,7 +72,7 @@ const About: React.FC = () => {
               <span className="opacity-80">GitHub :</span>{" "}
               <Link
                 className="font-semibold text-blue-500"
-                to="https://github.com/Mahdi-Alaee"
+                to="https://github.com/Mahdi-Alaee/"
                 target="_blank"
               >
                 Mahdi-Alaee
