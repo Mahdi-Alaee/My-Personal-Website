@@ -16,6 +16,9 @@ const About: React.FC = () => {
       </h1>
       <PersonalInfos />
 
+      {/* sections among border */}
+      <div className="border-b border-black-3 w-2/4 my-20 mx-auto"></div>
+
       <MySkills />
       
       <br />
