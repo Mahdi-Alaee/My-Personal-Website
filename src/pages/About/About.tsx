@@ -1,3 +1,4 @@
+import MySkills from "./components/MySkills";
 import PersonalInfos from "./components/PersonalInfos";
 
 const About: React.FC = () => {
@@ -13,8 +14,10 @@ const About: React.FC = () => {
           <span>About</span> <span className="text-yellowColor">Me</span>
         </div>
       </h1>
-      {/* personal infos */}
       <PersonalInfos />
+
+      <MySkills />
+      
       <br />
       <br />
       <br />
