@@ -20,7 +20,12 @@ const About: React.FC = () => {
       <div className="border-b border-black-3 w-2/4 my-20 mx-auto"></div>
 
       <MySkills />
+
+      {/* sections among border */}
+      <div className="border-b border-black-3 w-2/4 my-20 mx-auto"></div>
+
       
+
       <br />
       <br />
       <br />
