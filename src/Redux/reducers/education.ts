@@ -14,7 +14,6 @@ export const educationSlice = createSlice({
   initialState,
   reducers: {
     setEducations: (state, action: PayloadAction<EBoxType[]>) => {
-      console.log(state, action);
       state.educations.push(...action.payload);
     },
   },
