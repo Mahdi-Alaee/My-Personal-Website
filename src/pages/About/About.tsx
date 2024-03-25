@@ -2,18 +2,18 @@ import { useEffect } from "react";
 import ExperienceAndEducation from "./components/ExperienceAndEducation";
 import MySkills from "./components/MySkills";
 import PersonalInfos from "./components/PersonalInfos";
-import { useAppDispatch, useAppSelector } from "../../Redux/store";
+import { useAppDispatch } from "../../Redux/store";
 import { setExperiences } from "../../Redux/reducers/experience";
 import { setEducations } from "../../Redux/reducers/education";
 
 const About: React.FC = () => {
   const dispatch = useAppDispatch();
-  const state = useAppSelector((state) => state);
 
   useEffect(() => {
     dispatch(
       setExperiences([
         {
+          id: 1,
           date: "2005 - 2013",
           title1: "CONSULTANT",
           title2: "VIDEOHIVE",
@@ -22,6 +22,7 @@ const About: React.FC = () => {
           icon: "work",
         },
         {
+          id: 2,
           date: "2013 - 2018",
           title1: "UI/UX DESIGNER",
           title2: "THEMEFOREST",
@@ -30,6 +31,7 @@ const About: React.FC = () => {
           icon: "work",
         },
         {
+          id: 3,
           date: "2018 - PRESENT",
           title1: "WEB DEVELOPER",
           title2: "ENVATO",
@@ -42,6 +44,7 @@ const About: React.FC = () => {
     dispatch(
       setEducations([
         {
+          id: 1,
           date: "2009",
           title1: "BACHELOR DEGREE",
           title2: "TUNIS HIGH SCHOOL",
@@ -50,6 +53,7 @@ const About: React.FC = () => {
           icon: "education",
         },
         {
+          id: 2,
           date: "2012",
           title1: "MASTER DEGREE",
           title2: "KIEV UNIVERSITY",
@@ -58,6 +62,7 @@ const About: React.FC = () => {
           icon: "education",
         },
         {
+          id: 3,
           date: "2015",
           title1: "ENGINEER DEGREE",
           title2: "OXFORD UNIVERSITY",
@@ -68,10 +73,6 @@ const About: React.FC = () => {
       ])
     );
   }, []);
-
-  useEffect(() => {
-    console.log(state.education.educations, state.experience.experiences);
-  }, [state]);
 
   return (
     <div className="pt-28 sm:pt-16 container mx-auto px-6">

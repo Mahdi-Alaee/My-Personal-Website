@@ -1,4 +1,8 @@
+import { useAppSelector } from "../../../Redux/store";
+import EBox from "../../../components/EBox";
+
 const ExperienceAndEducation: React.FC = () => {
+  const state = useAppSelector((state) => state);
 
   return (
     <section>
@@ -10,9 +14,17 @@ const ExperienceAndEducation: React.FC = () => {
       {/* content */}
       <div>
         {/* experience section */}
-        <div></div>
+        <div>
+          {state.experience.experiences.map((experience) => (
+            <EBox key={experience.id} {...experience} />
+          ))}
+        </div>
         {/* education section */}
-        <div></div>
+        <div>
+          {state.education.educations.map((education) => (
+            <EBox key={education.id} {...education} />
+          ))}
+        </div>
       </div>
     </section>
   );

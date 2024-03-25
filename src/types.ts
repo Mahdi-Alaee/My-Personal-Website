@@ -12,4 +12,5 @@ export interface EBoxType {
   title2: string;
   desription: string;
   icon: "work" | "education";
+  id?: number;
 }

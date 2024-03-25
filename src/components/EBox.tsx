@@ -1,8 +1,17 @@
-const EBox: React.FC = () => {
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import { EBoxType } from "../types";
+
+const EBox: React.FC<EBoxType> = ({
+  date,
+  desription,
+  icon,
+  title1,
+  title2,
+}) => {
   return (
     <div>
       {/* absolote icon */}
-      <span>{/* @todo icon element */}</span>
+      <span>{icon === "work" ? <FaBriefcase /> : <FaGraduationCap />}</span>
 
       {/* date element */}
       <p>2018 - PRESENT</p>
