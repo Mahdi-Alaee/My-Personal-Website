@@ -8,7 +8,7 @@ const MySkills: React.FC = () => {
     { id: 3, percentage: 82, text: "JavaScript" },
     { id: 4, percentage: 91, text: "REACT" },
     { id: 5, percentage: 81, text: "TypeScript" },
-    { id: 6, percentage: 99, text: "Redux" },
+    { id: 6, percentage: 97, text: "Redux" },
     { id: 7, percentage: 93, text: "tailwind" },
     { id: 8, percentage: 50, text: "bootstrap" },
   ]);

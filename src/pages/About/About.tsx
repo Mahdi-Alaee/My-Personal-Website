@@ -1,3 +1,4 @@
+import ExperienceAndEducation from "./components/ExperienceAndEducation";
 import MySkills from "./components/MySkills";
 import PersonalInfos from "./components/PersonalInfos";
 
@@ -24,7 +25,7 @@ const About: React.FC = () => {
       {/* sections among border */}
       <div className="border-b border-black-3 w-2/4 my-20 mx-auto"></div>
 
-      
+      <ExperienceAndEducation />
 
       <br />
       <br />
