@@ -18,7 +18,7 @@ const MySkills: React.FC = () => {
       {/* title */}
       <h2 className="text-center text-2xl font-bold mb-14">MY SKILLS</h2>
       {/* content */}
-      <div className="grid grid-cols-4 gap-y-8">
+      <div className="grid grid-cols-2 gap-y-8 md:grid-cols-4">
         {skills.map((skill) => (
           <SkillBox key={skill.id} {...skill} />
         ))}
