@@ -93,7 +93,7 @@ const PersonalInfos: React.FC = () => {
       <ul className="grid grid-cols-2 gap-8 xl:gap-y-6">
         {boxInfos.map((info) => (
           // info box
-          <InfoBox {...info} />
+          <InfoBox key={info.id} {...info} />
         ))}
       </ul>
     </section>
