@@ -21,5 +21,3 @@ export const experienceSlice = createSlice({
 });
 
 export const { setExperiences } = experienceSlice.actions;
-
-export default experienceSlice.reducer;

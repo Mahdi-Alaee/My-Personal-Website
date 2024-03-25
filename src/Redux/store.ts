@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import experienceReducer from "./reducers/experience";
+import { experienceSlice } from "./reducers/experience";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { educationSlice } from "./reducers/education";
 
 export const store = configureStore({
   reducer: {
-    experience: experienceReducer,
+    experience: experienceSlice.reducer,
+    education: educationSlice.reducer,
   },
 });
 
