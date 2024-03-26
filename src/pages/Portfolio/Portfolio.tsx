@@ -2,7 +2,7 @@ import PortfolioBox from "./components/PortfolioBox";
 
 const Portfolio: React.FC = () => {
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-xl mx-auto px-6 pt-32 sm:pt-16 md:max-w-3xl lg:max-w-7xl lg:px-24">
       {/* title */}
       <h1 className="uppercase font-black text-center sm:relative">
         <span className="hidden text-white/5 text-9xl sm:block">works</span>
@@ -15,7 +15,7 @@ const Portfolio: React.FC = () => {
       </h1>
 
       {/* content */}
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:mt-20 lg:grid-cols-3">
         <PortfolioBox />
         <PortfolioBox />
         <PortfolioBox />
