@@ -59,7 +59,7 @@ const PersonalInfos: React.FC = () => {
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
             <span className="opacity-80">GitHub :</span>{" "}
             <Link
-              className="font-semibold text-blue-500"
+              className="font-semibold text-yellowColor"
               to="https://github.com/Mahdi-Alaee/"
               target="_blank"
             >
@@ -71,7 +71,7 @@ const PersonalInfos: React.FC = () => {
             <Link
               to="https://www.instagram.com/mahdi.alaee1/"
               target="_blank"
-              className="font-semibold text-blue-500"
+              className="font-semibold text-yellowColor"
             >
               mahdi.alaee1
             </Link>
