@@ -1,6 +1,13 @@
-const PortfolioBox: React.FC = () => {
+interface PortfolioBoxProps {
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const PortfolioBox: React.FC<PortfolioBoxProps> = ({ setIsModalOpen }) => {
   return (
-    <div className="group overflow-hidden rounded-lg relative cursor-pointer">
+    <div
+      className="group overflow-hidden rounded-lg relative cursor-pointer"
+      onClick={() => setIsModalOpen(true)}
+    >
       {/* image */}
       <img
         className="object-cover"

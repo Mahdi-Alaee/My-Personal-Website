@@ -5,20 +5,39 @@ import ReactDOM from "react-dom";
 import { CgClose } from "react-icons/cg";
 import { BiUser } from "react-icons/bi";
 
-const PortfolioModal: React.FC = () => {
+interface PortfolioModalProps {
+  isModalOpen: boolean;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const PortfolioModal: React.FC<PortfolioModalProps> = ({
+  isModalOpen,
+  setIsModalOpen,
+}) => {
   return ReactDOM.createPortal(
     // modal container
-    <div className="fixed top-0 left-0 right-0 bottom-0 z-50 lg:bg-black/80 lg:flex lg:justify-center lg:items-center">
+    <div
+      className={`fixed top-0 left-0 right-0 bottom-0 transition-all duration-200 lg:bg-black/90 lg:flex 
+    lg:justify-center lg:items-center ${
+      isModalOpen ? "z-50 opacity-100" : "opacity-0 -z-10"
+    }`}
+    >
       {/* desktop close button */}
-      <p className="hidden absolute  top-5 right-5 text-[#ababab] cursor-pointer text-5xl lg:block">
+      <p
+        onClick={() => setIsModalOpen(false)}
+        className="hidden absolute  top-5 right-5 text-[#ababab] cursor-pointer text-5xl lg:block"
+      >
         <CgClose />
       </p>
       {/* modal box */}
-      <div className="bg-darkBrown w-full h-full text-white lg:w-max lg:h-max lg:py-8 lg:rounded-xl">
+      <div className="bg-darkBrown w-full h-full pb-8 text-white overflow-y-scroll lg:w-max lg:h-max lg:py-8 lg:rounded-xl lg:overflow-hidden">
         {/* wrapper */}
         <div className="max-w-2xl mx-auto">
           {/* close button */}
-          <p className="py-4 border-b border-lightBrown text-3xl text-[#ababab] flex justify-center cursor-pointer md:text-5xl lg:hidden">
+          <p
+            onClick={() => setIsModalOpen(false)}
+            className="py-4 border-b border-lightBrown text-3xl text-[#ababab] flex justify-center cursor-pointer md:text-5xl lg:hidden"
+          >
             <CgClose />
           </p>
           {/* title */}
