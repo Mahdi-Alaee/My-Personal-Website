@@ -1,4 +1,5 @@
 import PortfolioBox from "./components/PortfolioBox";
+import PortfolioModal from "./components/PortfolioModal";
 
 const Portfolio: React.FC = () => {
   return (
@@ -23,6 +24,8 @@ const Portfolio: React.FC = () => {
         <PortfolioBox />
         <PortfolioBox />
       </div>
+
+      <PortfolioModal />
     </div>
   );
 };
