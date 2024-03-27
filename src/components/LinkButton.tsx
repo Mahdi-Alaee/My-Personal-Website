@@ -11,13 +11,13 @@ const LinkButton: React.FC<PropsWithChildren<LinkButtonProps>> = ({to, icon, chi
     return (
         <Link
           className={`group relative flex mt-5 pl-8 border border-yellowColor gap-x-5 
-          items-center rounded-full py-4 overflow-hidden uppercase pr-16 ${className}`}
+          items-center rounded-full py-4 overflow-hidden uppercase pr-20 ${className}`}
           to={to}
         >
           <span className="block font-bold tracking-tighter">
             {children}
           </span>
-          <span className="absolute right-0 block bg-yellowColor p-5 rounded-full">
+          <span className="absolute right-0 flex items-center justify-center bg-yellowColor w-14 h-14 rounded-full">
             {icon}
           </span>
           {/* background hover */}

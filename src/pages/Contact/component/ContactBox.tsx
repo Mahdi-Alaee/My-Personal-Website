@@ -1,14 +1,14 @@
-import { MdEmail } from "react-icons/md"
+import { FaEnvelopeOpen } from "react-icons/fa";
 
 const ContactBox: React.FC = () => {
     return (
-        <div>
+        <div className="flex items-center gap-x-4">
             {/* icon */}
-            <MdEmail />
+            <FaEnvelopeOpen className="text-4xl text-yellowColor" />
             {/* content */}
-            <div>
+            <div className="text-sm">
                 {/* title */}
-                <h6>MAIL ME</h6>
+                <h6 className="opacity-80">MAIL ME</h6>
                 {/* content */}
                 <p>steve@mail.com</p>
             </div>

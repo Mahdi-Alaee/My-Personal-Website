@@ -8,6 +8,7 @@ export default {
         darkColor: "#111111",
         darkBrown: "#252525",
         lightBrown: "#333333",
+        midBrown: '#2b2a2a'
       },
       fontFamily:{
       sans: ['poppins', 'sans-serif']

@@ -1,12 +1,12 @@
-import { FaTelegram } from "react-icons/fa";
 import LinkButton from "../../components/LinkButton";
 import ContactBox from "./component/ContactBox";
 import Input from "./component/Input";
 import Social from "./component/Social";
+import { BiSend } from "react-icons/bi";
 
 const Contact: React.FC = () => {
   return (
-    <div>
+    <div className="pt-24 sm:pt-16">
       {/* title */}
       <h1 className="uppercase font-black text-center sm:relative">
         <span className="hidden text-white/5 text-9xl sm:block">CONTACT</span>
@@ -18,38 +18,41 @@ const Contact: React.FC = () => {
         </div>
       </h1>
 
-      {/* contact */}
-      <div>
+      {/* content */}
+      <div className="px-6 flex flex-col gap-y-12 mx-auto sm:mt-16 sm:max-w-xl md:max-w-3xl lg:flex-row lg:max-w-7xl lg:gap-x-12 lg:px-24">
         {/* left */}
         <div>
           {/* title */}
-          <h2>DON'T BE SHY !</h2>
+          <h2 className="text-xl font-semibold sm:text-2xl">DON'T BE SHY !</h2>
           {/* description */}
-          <p>
+          <p className="my-6 text-sm leading-6 max-w-96">
             Feel free to get in touch with me. I am always open to discussing
             new projects, creative ideas or opportunities to be part of your
             visions.
           </p>
-          <ContactBox />
-          <ContactBox />
+          {/* contactBox wrapper */}
+          <div className="flex flex-col gap-y-6">
+            <ContactBox />
+            <ContactBox />
+          </div>
           {/* socials */}
-          <ul>
-            <Social />
-            <Social />
-            <Social />
-            <Social />
-          </ul>
+          <div className="mt-4 flex gap-x-2">
+            <Social to="" />
+            <Social to="" />
+            <Social to="" />
+            <Social to="" />
+          </div>
         </div>
         {/* right */}
         <form>
           {/* textboxes wrapper */}
-          <div>
+          <div className="flex flex-col gap-y-8 md:grid md:grid-cols-3 md:gap-x-8">
             <Input placeholder="YOUR NAME" />
             <Input placeholder="YOUR EMAIL" />
             <Input placeholder="YOUR SUBJECT" />
           </div>
-          <Input placeholder="YOUR MESSAGE" />
-          <LinkButton icon={<FaTelegram />} to="">
+          <Input className="my-8 w-full min-h-44 max-h-96" type='textarea' placeholder="YOUR MESSAGE" />
+          <LinkButton className="w-max mt-0" icon={<BiSend className="text-2xl" />} to="">
             SEND MESSAGE
           </LinkButton>
         </form>
