@@ -84,7 +84,7 @@ const PersonalInfos: React.FC = () => {
         <LinkButton
           to="https://digikala.com"
           icon={<FaDownload />}
-          className="max-w-56 mt-8"
+          className="max-w-64 mt-8"
         >
           Download CV
         </LinkButton>
