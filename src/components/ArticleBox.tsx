@@ -2,20 +2,21 @@ import { Link } from "react-router-dom";
 
 const ArticleBox: React.FC = () => {
   return (
-    <div>
+    <div className="bg-darkBrown rounded-md overflow-hidden max-w-lg">
       {/* banner */}
-      <Link to=''>
+      <Link className="block border-b-[6px] border-yellowColor" to=''>
         <img
           src="https://tunis-next.netlify.app/assets/img/blog/blog-post-1.jpg"
-          alt=""
+          alt="article banner"
         />
       </Link>
       {/* title */}
-      <Link to=''>How to Own Your Audience by Creating an Email List</Link>
+      <Link className="block px-6 my-4 text-xl font-bold transition-colors duration-200
+      tracking-wider hover:text-yellowColor" to=''>How to Own Your Audience by Creating an Email List</Link>
       {/* description */}
-      <p>
+      <p className="px-6 pb-6 leading-7">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore
+        tempor incididunt ut labore ...
       </p>
     </div>
   );

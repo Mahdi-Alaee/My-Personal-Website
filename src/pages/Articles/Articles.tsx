@@ -2,7 +2,7 @@ import ArticleBox from "../../components/ArticleBox";
 
 const Articles: React.FC = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-24 sm:pt-16">
       {/* title */}
       <h1 className="uppercase font-black text-center sm:relative">
         <span className="hidden text-white/5 text-9xl sm:block">works</span>
@@ -15,7 +15,12 @@ const Articles: React.FC = () => {
       </h1>
 
       {/* articles container */}
-      <div>
+      <div
+        className="px-6 mt-16 grid grid-cols-1 w-max mx-auto gap-y-8 md:grid-cols-2 
+      md:w-auto md:gap-x-8 md:px-8 md:max-w-3xl lg:max-w-5xl lg:px-6 xl:grid-cols-3 xl:max-w-6xl"
+      >
+        <ArticleBox />
+        <ArticleBox />
         <ArticleBox />
       </div>
     </div>
