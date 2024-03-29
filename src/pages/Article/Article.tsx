@@ -2,7 +2,7 @@ import { FaCalendar, FaTags, FaUser } from "react-icons/fa";
 
 const Article: React.FC = () => {
   return (
-    <div>
+    <div className="pt-44 sm:pt-16">
       {/* title */}
       <h2 className="uppercase font-black text-center sm:relative">
         <span className="hidden text-white/5 text-9xl sm:block">POST</span>
@@ -15,31 +15,31 @@ const Article: React.FC = () => {
       </h2>
 
       {/* content */}
-      <div>
+      <div className="px-12 mx-auto sm:px-6 sm:max-w-3xl">
         {/* article infos */}
-        <ul>
-          <li>
-            <FaUser />
-            <span>steve</span>
+        <ul className="flex gap-x-2 sm:mt-14">
+          <li className="flex gap-x-2">
+            <FaUser className="text-xs text-yellowColor" />
+            <span className="text-xs">steve</span>
           </li>
-          <li>
-            <FaCalendar />
-            <span>09 December 2023</span>
+          <li className="flex gap-x-2">
+            <FaCalendar className="text-xs text-yellowColor" />
+            <span className="text-xs">09 December 2023</span>
           </li>
-          <li>
-            <FaTags />
-            <span>wordpress, business, economy, design</span>
+          <li className="flex gap-x-2">
+            <FaTags className="text-xs text-yellowColor" />
+            <span className="text-xs">wordpress, business, economy, design</span>
           </li>
         </ul>
         {/* title */}
-        <h1>How To Own Your Audience By Creating An Email List</h1>
+        <h1 className="text-2xl font-bold my-4 sm:text-4xl">How To Own Your Audience By Creating An Email List</h1>
         {/* banner */}
         <img
           src="https://tunis-next.netlify.app/assets/img/blog/blog-post-1.jpg"
           alt="article banner"
         />
         {/* article body */}
-        <div>
+        <div className="flex flex-col gap-y-10 leading-7">
           {/* paragraph */}
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
