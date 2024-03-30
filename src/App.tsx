@@ -4,9 +4,10 @@ import MenuButton from "./components/MenuButton";
 import ThemeButton from "./components/ThemeButton";
 import { useLocation, useRoutes } from "react-router-dom";
 import { routes } from "./Routes";
+import ThemeMenu from "./components/ThemeMenu";
 
 const App: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // setIsMenuOpen
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRoutes(routes);
   const location = useLocation();
 
@@ -17,7 +18,7 @@ const App: React.FC = () => {
   return (
     <div
       id="app"
-      className="relative bg-darkColor text-white min-h-screen overflow-hidden"
+      className="relative dark:bg-darkColor dark:text-white min-h-screen overflow-hidden"
     >
       {/* background shape */}
       {location.pathname === "/" && (
@@ -32,6 +33,9 @@ const App: React.FC = () => {
 
       {/* Theme Button */}
       <ThemeButton />
+
+      {/* Theme Menu */}
+      <ThemeMenu />
 
       {/* pages */}
       <div className="relative z-10">{router}</div>

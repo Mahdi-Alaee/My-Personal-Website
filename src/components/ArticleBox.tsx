@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ArticleBox: React.FC = () => {
   return (
-    <div className="bg-darkBrown rounded-md overflow-hidden max-w-lg">
+    <div className="dark:bg-darkBrown rounded-md overflow-hidden max-w-lg">
       {/* banner */}
       <Link className="block border-b-[6px] border-yellowColor" to='/blog/test-article'>
         <img

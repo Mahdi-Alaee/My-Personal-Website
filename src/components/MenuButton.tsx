@@ -10,7 +10,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({
   return (
     <button
       id="btn-menu-responsive"
-      className={`btn-menu bg-darkBrown rounded-lg ${!isMenuOpen ? "" : "close"} lg:hidden`}
+      className={`btn-menu dark:bg-darkBrown rounded-lg ${!isMenuOpen ? "" : "close"} lg:hidden`}
       onClick={() => setIsMenuOpen((prev) => !prev)}
     >
       <span></span>
