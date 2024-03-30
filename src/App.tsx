@@ -9,6 +9,7 @@ import ThemeMenu from "./components/ThemeMenu";
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const router = useRoutes(routes);
   const location = useLocation();
 
@@ -39,7 +40,7 @@ const App: React.FC = () => {
       />
 
       {/* Theme Menu */}
-      <ThemeMenu isThemeMenuOpen={isThemeMenuOpen} />
+      <ThemeMenu isThemeMenuOpen={isThemeMenuOpen} isDark={isDark} setIsDark={setIsDark} />
 
       {/* pages */}
       <div className="relative z-10">{router}</div>

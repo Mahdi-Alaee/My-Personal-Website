@@ -11,16 +11,14 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return type === "textarea" ? (
     <textarea
-      className={`bg-midBrown font-thin px-6 py-3 rounded-3xl border border-transparent 
-      transition-all duration-200 focus:border-yellowColor outline-none placeholder:text-sm 
-      placeholder:opacity-70 ${className}`}
+      className={`dark:bg-midBrown font-thin px-6 py-3 rounded-3xl border dark:border-transparent border-gray-300 
+      transition-all duration-200 focus:border-yellowColor outline-none placeholder:text-sm placeholder:opacity-70 ${className}`}
       placeholder={placeholder}
     ></textarea>
   ) : (
     <input
-      className={`bg-midBrown font-thin px-6 py-3 rounded-full border border-transparent 
-        transition-all duration-200 focus:border-yellowColor outline-none placeholder:text-sm 
-        placeholder:opacity-70 ${className}`}
+      className={`dark:bg-midBrown font-thin px-6 py-3 rounded-full border dark:border-transparent border-gray-300 
+        transition-all duration-200 focus:border-yellowColor outline-none placeholder:text-sm placeholder:opacity-70 ${className}`}
       placeholder={placeholder}
     />
   );

@@ -9,10 +9,10 @@ const Contact: React.FC = () => {
     <div className="pt-24 sm:pt-16">
       {/* title */}
       <h1 className="uppercase font-black text-center sm:relative">
-        <span className="hidden dark:text-white/5 text-9xl sm:block">CONTACT</span>
+        <span className="hidden text-gray-100 dark:text-white/5 text-9xl sm:block">CONTACT</span>
         <div
           className="fixed z-10 text-3xl p-5 w-full left-0 right-0  top-0 m-auto 
-           flex items-center dark:bg-darkBrown sm:absolute sm:bottom-0 sm:w-max sm:text-6xl sm:bg-transparent"
+           flex items-center sm:absolute sm:bottom-0 sm:w-max sm:text-6xl sm:bg-transparent"
         >
           <span>GET IN</span> <span className="text-yellowColor">TOUCH</span>
         </div>

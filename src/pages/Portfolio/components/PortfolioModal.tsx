@@ -25,12 +25,12 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
       {/* desktop close button */}
       <p
         onClick={() => setIsModalOpen(false)}
-        className="hidden absolute  top-5 right-5 dark:text-[#ababab] cursor-pointer text-5xl lg:block"
+        className="hidden absolute  top-5 right-5 text-gray-500 cursor-pointer text-5xl lg:block"
       >
         <CgClose />
       </p>
       {/* modal box */}
-      <div className="dark:bg-darkBrown w-full h-full pb-8 dark:text-white overflow-y-scroll lg:w-max lg:h-max lg:py-8 lg:rounded-xl lg:overflow-hidden">
+      <div className="bg-gray-500 dark:bg-darkBrown w-full h-full pb-8 dark:text-white overflow-y-scroll lg:w-max lg:h-max lg:py-8 lg:rounded-xl lg:overflow-hidden">
         {/* wrapper */}
         <div className="max-w-2xl mx-auto">
           {/* close button */}

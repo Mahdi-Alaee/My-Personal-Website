@@ -14,6 +14,7 @@ export const experienceSlice = createSlice({
   initialState,
   reducers: {
     setExperiences: (state, action: PayloadAction<EBoxType[]>) => {
+      state.experiences.splice(0, state.experiences.length);
       state.experiences.push(...action.payload);
     },
   },
