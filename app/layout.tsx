@@ -1,5 +1,6 @@
 import Menu from "@/components/Menu/Menu";
 import "./globals.css";
+import MenuButton from "@/components/MenuButton/MenuButton";
 
 export const metadata = {
   title: "Mahdi Alaee",
@@ -14,8 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative dark:bg-darkColor dark:text-white min-h-screen overflow-hidden">
-      <Menu />
-
+        <Menu />
+        <MenuButton />
         <main>{children}</main>
       </body>
     </html>
