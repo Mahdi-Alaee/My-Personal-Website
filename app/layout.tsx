@@ -1,6 +1,7 @@
 import Menu from "@/components/Menu/Menu";
 import "./globals.css";
 import MenuButton from "@/components/MenuButton/MenuButton";
+import LayoutClient from "@/components/LayoutClient/LayoutClient";
 
 export const metadata = {
   title: "Mahdi Alaee",
@@ -15,8 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative dark:bg-darkColor dark:text-white min-h-screen overflow-hidden">
-        <Menu />
-        <MenuButton />
+        <LayoutClient />
         <main>{children}</main>
       </body>
     </html>
