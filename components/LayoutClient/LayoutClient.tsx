@@ -9,7 +9,6 @@ import ThemeMenu from "../ThemeMenu/ThemeMenu";
 export default function LayoutClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
 
   return (
     <>
@@ -20,9 +19,7 @@ export default function LayoutClient() {
         setIsThemeMenuOpen={setIsThemeMenuOpen}
       />
       <ThemeMenu
-        isDark={isDark}
         isThemeMenuOpen={isThemeMenuOpen}
-        setIsDark={setIsDark}
       />
     </>
   );

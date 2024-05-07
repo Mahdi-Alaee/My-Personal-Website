@@ -7,6 +7,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({
   isMenuOpen,
   setIsMenuOpen,
 }) => {
+
   return (
     <button
       id="btn-menu-responsive"

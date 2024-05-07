@@ -4,10 +4,10 @@
 
 
 /** fonts */
-@font-face {
+/* @font-face {
     font-family: poppins;
     src: url('/fonts/poppins/Poppins-Medium.ttf') format(truetype);
-}
+} */
 
 /** Menu Button */
 .btn-menu {

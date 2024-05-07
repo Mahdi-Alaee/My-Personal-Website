@@ -2,6 +2,8 @@ import Menu from "@/components/Menu/Menu";
 import "./globals.css";
 import MenuButton from "@/components/MenuButton/MenuButton";
 import LayoutClient from "@/components/LayoutClient/LayoutClient";
+import Providers from "./providers";
+import { poppins } from "./fonts";
 
 export const metadata = {
   title: "Mahdi Alaee",
@@ -14,10 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable}`} suppressHydrationWarning>
       <body className="relative dark:bg-darkColor dark:text-white min-h-screen overflow-hidden">
-        <LayoutClient />
-        <main>{children}</main>
+        <Providers>
+          <LayoutClient />
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );

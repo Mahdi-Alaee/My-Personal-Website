@@ -18,11 +18,11 @@ const config: Config = {
         darkColor: "#111111",
         darkBrown: "#252525",
         lightBrown: "#333333",
-        midBrown: '#2b2a2a'
+        midBrown: "#2b2a2a",
       },
-      fontFamily:{
-      sans: ['poppins', 'sans-serif']
-      }
+      fontFamily: {
+        sans: ["var(--poppins)", "sans-serif"],
+      },
     },
     screens: {
       sm: "576px",
@@ -33,6 +33,6 @@ const config: Config = {
     },
   },
   plugins: [],
-  darkMode: 'class'
+  darkMode: "class",
 };
 export default config;

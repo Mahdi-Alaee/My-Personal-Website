@@ -1,3 +1,4 @@
+import { useTheme } from "next-themes";
 import { BiSun } from "react-icons/bi";
 import { FaMoon } from "react-icons/fa";
 // import { useAppDispatch } from "../Redux/store";
@@ -5,24 +6,16 @@ import { FaMoon } from "react-icons/fa";
 
 interface ThemeMenuProps {
   isThemeMenuOpen: boolean;
-  isDark: boolean;
-  setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ThemeMenu: React.FC<ThemeMenuProps> = ({
-  isThemeMenuOpen,
-  isDark,
-  setIsDark,
-}) => {
-//   const dispatch = useAppDispatch();
+const ThemeMenu: React.FC<ThemeMenuProps> = ({ isThemeMenuOpen }) => {
+  const { setTheme, resolvedTheme } = useTheme();
   const themeHandler = () => {
-    // dispatch(changeTheme());
-    setIsDark((prev) => {
-      if (prev) document.documentElement.classList.remove("dark");
-      else document.documentElement.classList.add("dark");
-
-      return !prev;
-    });
+    if (resolvedTheme === "dark") {
+      setTheme("light");
+    } else if (resolvedTheme === "light") {
+      setTheme("dark");
+    }
   };
 
   return (
@@ -39,7 +32,7 @@ const ThemeMenu: React.FC<ThemeMenuProps> = ({
           onClick={themeHandler}
           className="p-2 rounded-full bg-darkBrown dark:text-gray-300 cursor-pointer"
         >
-          {isDark ? (
+          {resolvedTheme === "dark" ? (
             <BiSun className="text-xl" />
           ) : (
             <FaMoon className="text-white text-xl" />
