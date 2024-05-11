@@ -12,7 +12,7 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
 }) => {
   return (
     <button
-      className="fixed top-24 right-7 z-50 bg-gray-300 dark:bg-darkBrown p-3 rounded-full 
+      className="fixed top-24 right-7 z-10 bg-gray-300 dark:bg-darkBrown p-3 rounded-full 
         duration-200 hover:bg-yellowColor lg:top-10 lg:right-8"
       onClick={() => setIsThemeMenuOpen((prev) => !prev)}
     >

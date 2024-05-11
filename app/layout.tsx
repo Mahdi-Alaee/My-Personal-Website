@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className="relative dark:bg-darkColor dark:text-white min-h-screen">
         <Providers>
           <LayoutClient />
-          <main className="relative z-10">{children}</main>
+          <main>{children}</main>
         </Providers>
       </body>
     </html>
