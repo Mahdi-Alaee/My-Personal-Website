@@ -17,7 +17,7 @@ const Menu: React.FC<MenuProps> = ({ isMenuOpen }) => {
     { to: "/about", text: "ABOUT", icon: <FaUser /> },
     { to: "/portfolio", text: "PORTFOLIO", icon: <FaBriefcase /> },
     { to: "/contact", text: "CONTACT", icon: <FaEnvelopeOpen /> },
-    { to: "/blog", text: "BLOG", icon: <FaComments /> },
+    { to: "/articles", text: "BLOG", icon: <FaComments /> },
   ];
 
   return (
