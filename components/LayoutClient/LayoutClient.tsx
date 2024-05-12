@@ -16,7 +16,7 @@ export default function LayoutClient() {
   return (
     <>
       {pathName === '/' && <HomeShape />}
-      <Menu isMenuOpen={isMenuOpen} />
+      <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <MenuButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <ThemeButton
         isThemeMenuOpen={isThemeMenuOpen}

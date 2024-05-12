@@ -20,28 +20,28 @@ const ThemeMenu: React.FC<ThemeMenuProps> = ({ isThemeMenuOpen }) => {
 
   return (
     <div
-      className={`fixed top-6 bg-white text-black py-4 px-8 transition-all duration-300 z-10 
+      className={`fixed top-20 md:top-6 bg-gray-300 dark:bg-darkBrown text-black py-4 px-8 transition-all duration-300 z-10 
     ${
       isThemeMenuOpen ? "opacity-100 right-20" : "opacity-0 -right-72"
     } rounded-lg`}
     >
       {/* theme */}
       <section className="flex items-center gap-x-2">
-        <span className="">THEME: </span>
+        <span className="dark:text-white">THEME: </span>
         <span
           onClick={themeHandler}
-          className="p-2 rounded-full bg-darkBrown dark:text-gray-300 cursor-pointer"
+          className="p-2 rounded-full bg-darkBrown dark:bg-gray-300 dark:text-gray-300 cursor-pointer"
         >
-          {resolvedTheme === "dark" ? (
-            <BiSun className="text-xl" />
-          ) : (
+          {resolvedTheme === "light" ? (
             <FaMoon className="text-white text-xl" />
+          ) : (
+            <BiSun className="text-xl text-black" />
           )}
         </span>
       </section>
       {/* color */}
       <section>
-        <span className="">COLOR: </span>
+        <span className="dark:text-white">COLOR: </span>
         <div className="flex gap-x-2">
           <span className="cursor-pointer w-7 h-7 rounded-full bg-yellowColor"></span>
           <span className="cursor-pointer w-7 h-7 rounded-full bg-blue-500"></span>

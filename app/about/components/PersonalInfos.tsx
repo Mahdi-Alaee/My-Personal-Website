@@ -20,7 +20,7 @@ const PersonalInfos: React.FC = () => {
         <h2 className="text-xl font-extrabold sm:text-3xl">PERSONAL INFOS</h2>
         {/* profile image */}
         <Image
-          src="https://tunis-next.netlify.app/assets/img/dark.jpg"
+          src="/images/my-profile.jpg"
           alt="mahdi alaee | مهدی علایی"
           className="w-60 h-60 rounded-full border-2 border-gray-800 object-cover 
             mx-auto mt-5 sm:hidden"

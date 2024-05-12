@@ -6,12 +6,14 @@ import {
   FaComments,
 } from "react-icons/fa";
 import MenuItem from "./MenuItem";
+import { Dispatch, SetStateAction } from "react";
 
 interface MenuProps {
   isMenuOpen: boolean;
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const Menu: React.FC<MenuProps> = ({ isMenuOpen }) => {
+const Menu: React.FC<MenuProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const menuItems = [
     { to: "/", text: "HOME", icon: <FaHome /> },
     { to: "/about", text: "ABOUT", icon: <FaUser /> },
@@ -28,7 +30,7 @@ const Menu: React.FC<MenuProps> = ({ isMenuOpen }) => {
        dark:lg:bg-transparent lg:bg-transparent lg:right-0 lg:w-60 lg:h-auto lg:text-lg lg:top-20 lg:left-auto lg:flex lg:flex-col lg:items-end`}
     >
       {menuItems.map((menuItem, index) => (
-        <MenuItem key={index} {...menuItem} />
+        <MenuItem setIsMenuOpen={setIsMenuOpen} key={index} {...menuItem} />
       ))}
     </ul>
   );

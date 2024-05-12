@@ -20,8 +20,8 @@ const SkillBox: React.FC<SkillBoxProps> = ({ text, percentage }) => {
           text={`${percentage}%`}
           styles={buildStyles({
             pathColor: "#ffb400",
-            textColor: `${theme === "dark" ? "#fff" : "#333"}`,
-            trailColor: `${theme === "dark" ? "#252525" : "#EEEEEE"}`,
+            textColor: `${theme === "light" ? "#333" : "#fff"}`,
+            trailColor: `${theme === "light" ? "#EEEEEE" : "#252525"}`,
           })}
         />
       </div>
