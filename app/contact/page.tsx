@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
         {/* left */}
         <div>
           {/* title */}
-          <h2 className="text-xl font-semibold sm:text-2xl">DON`T BE SHY !</h2>
+          <h2 className="text-xl font-semibold sm:text-2xl">DON{"\'"}T BE SHY !</h2>
           {/* description */}
           <p className="my-6 text-sm leading-6 max-w-96">
             Feel free to get in touch with me. I am always open to discussing
