@@ -1,14 +1,14 @@
+import { portfolio } from "@/data";
 import PortfolioBox from "./components/PortfolioBox";
 import PortfolioModal from "./components/PortfolioModal";
 
 interface PortfolioProps {
-  searchParams: { show?: string };
+  searchParams: { show?: string; selectedPortfolio?: string };
 }
 
 const Portfolio: React.FC<PortfolioProps> = ({ searchParams }) => {
   const isModalOpen = searchParams.show === "true" ? true : false;
-
-  console.log(isModalOpen);
+  const selectedPortfolio = searchParams?.selectedPortfolio || 'false'
 
   return (
     <div
@@ -31,15 +31,12 @@ const Portfolio: React.FC<PortfolioProps> = ({ searchParams }) => {
 
       {/* content */}
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:mt-20 lg:grid-cols-3">
-        <PortfolioBox />
-        <PortfolioBox />
-        <PortfolioBox />
-        <PortfolioBox />
-        <PortfolioBox />
-        <PortfolioBox />
+        {portfolio.map(({ id, title, banner }) => (
+          <PortfolioBox key={id} banner={banner} id={id} title={title} />
+        ))}
       </div>
 
-      <PortfolioModal isModalOpen={isModalOpen} />
+      <PortfolioModal isModalOpen={isModalOpen} selectedPortfolio={selectedPortfolio} />
     </div>
   );
 };

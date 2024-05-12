@@ -1,6 +1,8 @@
+import { Portfolio } from "./types/portfolio";
+
 export const experiences = [
   {
-    id: 1,
+    id: '1',
     date: "1401 - 1402",
     title1: "I-Job",
     title2: "Front-end developer",
@@ -14,34 +16,15 @@ export const experiences = [
       },
     ],
   },
-  // {
-  //   id: 2,
-  //   date: "2013 - 2018",
-  //   title1: "UI/UX DESIGNER",
-  //   title2: "THEMEFOREST",
-  //   desription:
-  //     "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,",
-  //   icon: "work",
-  // },
-  // {
-  //   id: 3,
-  //   date: "2018 - PRESENT",
-  //   title1: "WEB DEVELOPER",
-  //   title2: "ENVATO",
-  //   desription:
-  //     "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,",
-  //   icon: "work",
-  // },
 ];
 
 export const educations = [
   {
-    id: 1,
+    id: '1',
     date: "1401 - 1404",
     title1: "DEPLOMA DEGREE",
     title2: "SHOHADA PROFESSIONAL ACADEMY",
-    desription:
-      "graduated in Field of Study of software engineering",
+    desription: "graduated in Field of Study of software engineering",
     icon: "education",
     relatedLinks: [
       {
@@ -51,36 +34,43 @@ export const educations = [
       },
     ],
   },
-  // {
-  //   id: 2,
-  //   date: "2012",
-  //   title1: "MASTER DEGREE",
-  //   title2: "KIEV UNIVERSITY",
-  //   desription:
-  //     "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,",
-  //   icon: "education",
-  //   relatedLinks: [
-  //     {
-  //       id: "2",
-  //       href: "https://kooroshpt.ir/",
-  //       text: "koorosh pt",
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 3,
-  //   date: "2015",
-  //   title1: "ENGINEER DEGREE",
-  //   title2: "OXFORD UNIVERSITY",
-  //   desription:
-  //     "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,",
-  //   icon: "education",
-  //   relatedLinks: [
-  //     {
-  //       id: "3",
-  //       href: "https://kooroshpt.ir/",
-  //       text: "koorosh pt",
-  //     },
-  //   ],
-  // },
+];
+
+export const portfolio: Portfolio[] = [
+  {
+    id: '1',
+    title: "Simple Personal Website",
+    banner: "/images/simple-personal-website.png",
+    project: "For Practicing HTML CSS",
+    client: "No One",
+    languagesAndTools: "HTML,CSS,JS,SwiperJs",
+    link: {
+      href: "http://mahdixxx.ineu.ir/",
+      text: "Live",
+    },
+  },
+  {
+    id: '2',
+    title: "Simple Personal Website2",
+    banner: "/images/simple-personal-website.png",
+    project: "For Practicing HTML CSS 2",
+    client: "No One",
+    languagesAndTools: "HTML,CSS,JS,SwiperJs",
+    link: {
+      href: "http://mahdixxx.ineu.ir/",
+      text: "Live",
+    },
+  },
+  {
+    id: '3',
+    title: "Simple Personal Website3",
+    banner: "/images/simple-personal-website.png",
+    project: "For Practicing HTML CSS 3",
+    client: "No One",
+    languagesAndTools: "HTML,CSS,JS,SwiperJs",
+    link: {
+      href: "http://mahdixxx.ineu.ir/",
+      text: "Live",
+    },
+  },
 ];

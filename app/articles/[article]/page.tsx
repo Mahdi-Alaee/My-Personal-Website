@@ -6,9 +6,7 @@ interface ArticleProps {
 }
 
 const Article: React.FC<ArticleProps> = ({ params }) => {
-  const article = params.article;
-
-  console.log(article);
+  // const article = params.article;
 
   return (
     <div className="pt-44 sm:pt-16">

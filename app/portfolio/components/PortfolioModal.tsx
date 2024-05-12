@@ -4,12 +4,29 @@ import Link from "next/link";
 import { CgClose } from "react-icons/cg";
 import { BiUser } from "react-icons/bi";
 import Image from "next/image";
+import { portfolio } from "@/data";
+import { Portfolio } from "@/types/portfolio";
 
 interface PortfolioModalProps {
   isModalOpen: boolean;
+  selectedPortfolio: string;
 }
 
-const PortfolioModal: React.FC<PortfolioModalProps> = ({ isModalOpen }) => {
+const PortfolioModal: React.FC<PortfolioModalProps> = ({
+  isModalOpen,
+  selectedPortfolio,
+}) => {
+  if (selectedPortfolio === "false") {
+    return false;
+  }
+  const {
+    client,
+    project,
+    languagesAndTools,
+    link: { href, text },
+    banner,
+  } = portfolio.find((item) => item.id === selectedPortfolio) as Portfolio;
+
   return (
     // modal container
     <div
@@ -51,7 +68,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ isModalOpen }) => {
               {/* title */}
               <span>Project : </span>
               {/* content */}
-              <span className="font-medium text-yellowColor">Website</span>
+              <span className="font-medium text-yellowColor">{project}</span>
             </div>
             {/* info 2 */}
             <div className="flex items-center gap-x-2">
@@ -60,7 +77,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ isModalOpen }) => {
               {/* title */}
               <span>Client : </span>
               {/* content */}
-              <span className="font-medium text-yellowColor">Envato</span>
+              <span className="font-medium text-yellowColor">{client}</span>
             </div>
             {/* info 3 */}
             <div className="flex items-center gap-x-2 flex-wrap">
@@ -70,7 +87,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ isModalOpen }) => {
               <span>languages and tools : </span>
               {/* content */}
               <span className="font-medium text-yellowColor">
-                HTML, CSS, Javascript
+                {languagesAndTools}
               </span>
             </div>
             {/* info 4 */}
@@ -82,10 +99,10 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ isModalOpen }) => {
               {/* content */}
               <Link
                 className="text-yellowColor underline"
-                href="https://digikala.com"
+                href={href}
                 target="_blank"
               >
-                www.digikala.com
+                {text}
               </Link>
             </div>
           </div>
@@ -93,7 +110,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ isModalOpen }) => {
           {/* media */}
           <div className="px-6 mt-6">
             <Image
-              src="https://tunis-next.netlify.app/assets/img/projects/project-2.jpg"
+              src={banner}
               alt=""
               className="w-full h-full rounded-md"
               width="10000"
