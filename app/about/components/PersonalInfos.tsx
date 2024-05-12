@@ -6,10 +6,10 @@ import Image from "next/image";
 
 const PersonalInfos: React.FC = () => {
   const boxInfos = [
-    { id: 1, count: 12, text: "YEARS OF EXPERIENCE" },
-    { id: 2, count: 97, text: "COMPLETED PROJECTS" },
-    { id: 3, count: 81, text: "HAPPY CUSTOMERS" },
-    { id: 4, count: 53, text: "AWARDS WON" },
+    { id: 1, count: 2, text: "YEARS OF EXPERIENCE" },
+    { id: 2, count: 10, text: "COMPLETED PROJECTS" },
+    { id: 3, count: 2, text: "HAPPY CUSTOMERS" },
+    { id: 4, count: 3, text: "AWARDS WON" },
   ];
 
   return (

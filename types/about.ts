@@ -4,6 +4,11 @@ export interface EBoxType {
     title2: string;
     desription: string;
     icon: "work" | "education";
+    relatedLinks: {
+      id: string;
+      href:string,
+      text:string
+    }[];
     id?: number;
   }
   

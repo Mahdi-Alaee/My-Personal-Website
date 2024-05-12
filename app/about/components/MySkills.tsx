@@ -10,6 +10,7 @@ const MySkills: React.FC = () => {
     { id: 6, percentage: 97, text: "Redux" },
     { id: 7, percentage: 93, text: "tailwind" },
     { id: 8, percentage: 50, text: "bootstrap" },
+    { id: 9, percentage: 90, text: "NextJs" },
   ];
 
   return (
