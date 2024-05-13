@@ -3,13 +3,16 @@ import ContactBox from "./component/ContactBox";
 import Input from "./component/Input";
 import Social from "./component/Social";
 import { BiSend } from "react-icons/bi";
+import { FaEnvelopeOpen, FaGithub, FaInstagram, FaPhone, FaTelegram } from "react-icons/fa";
 
 const Contact: React.FC = () => {
   return (
     <div className="pt-24 sm:pt-16">
       {/* title */}
       <h1 className="uppercase font-black text-center sm:relative">
-        <span className="hidden text-gray-100 dark:text-white/5 text-9xl sm:block">CONTACT</span>
+        <span className="hidden text-gray-100 dark:text-white/5 text-9xl sm:block">
+          CONTACT
+        </span>
         <div
           className="fixed z-10 text-3xl p-5 w-full left-0 right-0  top-0 m-auto bg-white dark:bg-darkBrown 
            flex items-center sm:absolute sm:bottom-0 sm:w-max sm:text-6xl sm:bg-transparent sm:dark:bg-transparent"
@@ -23,7 +26,9 @@ const Contact: React.FC = () => {
         {/* left */}
         <div>
           {/* title */}
-          <h2 className="text-xl font-semibold sm:text-2xl">DON{"\'"}T BE SHY !</h2>
+          <h2 className="text-xl font-semibold sm:text-2xl">
+            DON{"'"}T BE SHY !
+          </h2>
           {/* description */}
           <p className="my-6 text-sm leading-6 max-w-96">
             Feel free to get in touch with me. I am always open to discussing
@@ -32,15 +37,22 @@ const Contact: React.FC = () => {
           </p>
           {/* contactBox wrapper */}
           <div className="flex flex-col gap-y-6">
-            <ContactBox />
-            <ContactBox />
+            <ContactBox
+              content="mahdi.alaee.dev@gmail.com"
+              title="MAIL ME"
+              icon={<FaEnvelopeOpen />}
+            />
+            <ContactBox
+              content="+98 933 431 8411"
+              title="CALL ME"
+              icon={<FaPhone />}
+            />
           </div>
           {/* socials */}
           <div className="mt-4 flex gap-x-2">
-            <Social to="" />
-            <Social to="" />
-            <Social to="" />
-            <Social to="" />
+            <Social to="https://github.com/mahdi-Alaee" icon={<FaGithub />} />
+            <Social to="https://www.instagram.com/mahdi.alaee1/" icon={<FaInstagram />} />
+            <Social to="https://t.me/mahdiXXX1" icon={<FaTelegram />} />
           </div>
         </div>
         {/* right */}
@@ -51,8 +63,16 @@ const Contact: React.FC = () => {
             <Input placeholder="YOUR EMAIL" />
             <Input placeholder="YOUR SUBJECT" />
           </div>
-          <Input className="my-8 w-full min-h-44 max-h-96" type='textarea' placeholder="YOUR MESSAGE" />
-          <LinkButton className="w-max mt-0" icon={<BiSend className="text-2xl" />} to="">
+          <Input
+            className="my-8 w-full min-h-44 max-h-96"
+            type="textarea"
+            placeholder="YOUR MESSAGE"
+          />
+          <LinkButton
+            className="w-max mt-0"
+            icon={<BiSend className="text-2xl" />}
+            to=""
+          >
             SEND MESSAGE
           </LinkButton>
         </form>

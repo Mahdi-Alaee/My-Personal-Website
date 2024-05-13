@@ -8,7 +8,7 @@ interface PortfolioProps {
 
 const Portfolio: React.FC<PortfolioProps> = ({ searchParams }) => {
   const isModalOpen = searchParams.show === "true" ? true : false;
-  const selectedPortfolio = searchParams?.selectedPortfolio || 'false'
+  const selectedPortfolio = searchParams?.selectedPortfolio || "false";
 
   return (
     <div
@@ -36,7 +36,10 @@ const Portfolio: React.FC<PortfolioProps> = ({ searchParams }) => {
         ))}
       </div>
 
-      <PortfolioModal isModalOpen={isModalOpen} selectedPortfolio={selectedPortfolio} />
+      <PortfolioModal
+        isModalOpen={isModalOpen}
+        selectedPortfolio={selectedPortfolio}
+      />
     </div>
   );
 };
