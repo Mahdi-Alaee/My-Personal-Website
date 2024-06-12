@@ -6,13 +6,34 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export const getArticlesQuery = graphql(`
-  query ExampleQuery {
-    Articles {
-      items {
-        title
+export async function getArticles() {
+  const query = graphql(`
+    query ExampleQuery {
+      Articles {
+        items {
+          title
+          description
+          body
+          tags {
+            _id
+            body
+            slug
+          }
+          shortname
+          banner {
+            url
+          }
+        }
+        total
       }
-      total
     }
-  }
-`);
+  `);
+
+  const {
+    data: { Articles },
+  } = await client.query({
+    query,
+  });
+
+  return Articles;
+}
