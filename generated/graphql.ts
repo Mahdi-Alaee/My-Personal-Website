@@ -19,18 +19,23 @@ export type Scalars = {
 };
 
 /** This union type holds all content models. */
-export type AllModels = Article;
+export type AllModels = Article | Portfolio;
 
 /** Single Article. */
 export type Article = Model & {
-  __typename?: 'Article';
   /** Count of bookmark events. */
   _bookmarks: Scalars['Int']['output'];
   /** The time the content item was changed. */
   _changed_on: Scalars['String']['output'];
-  /** Count of clicktrough events. */
+  /**
+   * Count of clicktrough events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
   _clicktroughs: Scalars['Int']['output'];
-  /** Count of comment events. */
+  /**
+   * Count of comment events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
   _comments: Scalars['Int']['output'];
   _context?: Maybe<Context>;
   /** The time the content item was created. */
@@ -48,11 +53,17 @@ export type Article = Model & {
   _localizations: Array<Article>;
   /** The time for when the content item is or will be published. */
   _publish_on?: Maybe<Scalars['String']['output']>;
-  /** Count of purchase events. */
+  /**
+   * Count of purchase events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
   _purchases: Scalars['Int']['output'];
   /** Calculated time to read in minutes. */
   _read_time?: Maybe<Scalars['Int']['output']>;
-  /** Count of share events. */
+  /**
+   * Count of share events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
   _shares: Scalars['Int']['output'];
   /** Unique within Type, string identifier for each content item. */
   _slug?: Maybe<Scalars['String']['output']>;
@@ -60,7 +71,10 @@ export type Article = Model & {
   _subscribes: Scalars['Int']['output'];
   /** Count of view events. */
   _views: Scalars['Int']['output'];
-  /** Count of vote events. */
+  /**
+   * Count of vote events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
   _votes: Scalars['Int']['output'];
   banner?: Maybe<Asset>;
   body?: Maybe<Scalars['String']['output']>;
@@ -178,14 +192,12 @@ export type ArticleWhereInput = {
 
 /** List of Articles items. */
 export type Articles = {
-  __typename?: 'Articles';
   items: Array<Article>;
   total: Scalars['Int']['output'];
 };
 
 /** Prepr Asset system model */
 export type Asset = {
-  __typename?: 'Asset';
   /** Unique identifier for each asset. */
   _id: Scalars['String']['output'];
   _type: Scalars['String']['output'];
@@ -244,7 +256,6 @@ export enum AssetAlignment {
 }
 
 export type ContentItems = {
-  __typename?: 'ContentItems';
   items?: Maybe<Array<Maybe<AllModels>>>;
   total?: Maybe<Scalars['Int']['output']>;
 };
@@ -278,7 +289,6 @@ export type ContentItemsWhereInput = {
 };
 
 export type Context = {
-  __typename?: 'Context';
   countries?: Maybe<Array<Scalars['String']['output']>>;
   /** The unique identifier for an A/B test or personalization block used for analytics. */
   group_id?: Maybe<Scalars['String']['output']>;
@@ -327,8 +337,182 @@ export type Model = {
   _slug?: Maybe<Scalars['String']['output']>;
 };
 
+/** Single Portfolio. */
+export type Portfolio = Model & {
+  /** Count of bookmark events. */
+  _bookmarks: Scalars['Int']['output'];
+  /** The time the content item was changed. */
+  _changed_on: Scalars['String']['output'];
+  /**
+   * Count of clicktrough events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
+  _clicktroughs: Scalars['Int']['output'];
+  /**
+   * Count of comment events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
+  _comments: Scalars['Int']['output'];
+  _context?: Maybe<Context>;
+  /** The time the content item was created. */
+  _created_on: Scalars['String']['output'];
+  /** Id of your Prepr Environment. */
+  _environment_id: Scalars['String']['output'];
+  /** Unique identifier for each content item. */
+  _id: Scalars['String']['output'];
+  _last_published_on?: Maybe<Scalars['String']['output']>;
+  /** Count of like events. */
+  _likes: Scalars['Int']['output'];
+  _locale: Scalars['String']['output'];
+  _locales: Array<Scalars['String']['output']>;
+  /** This field returns all localizations for this content item. */
+  _localizations: Array<Portfolio>;
+  /** The time for when the content item is or will be published. */
+  _publish_on?: Maybe<Scalars['String']['output']>;
+  /**
+   * Count of purchase events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
+  _purchases: Scalars['Int']['output'];
+  /** Calculated time to read in minutes. */
+  _read_time?: Maybe<Scalars['Int']['output']>;
+  /**
+   * Count of share events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
+  _shares: Scalars['Int']['output'];
+  /** Unique within Type, string identifier for each content item. */
+  _slug?: Maybe<Scalars['String']['output']>;
+  /** Count of subscribe events. */
+  _subscribes: Scalars['Int']['output'];
+  /** Count of view events. */
+  _views: Scalars['Int']['output'];
+  /**
+   * Count of vote events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
+  _votes: Scalars['Int']['output'];
+  banner?: Maybe<Asset>;
+  client?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  preview?: Maybe<Scalars['String']['output']>;
+  tags?: Maybe<Array<Maybe<Tag>>>;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+export enum PortfolioSortInput {
+  ChangedOn = 'changed_on',
+  ChangedOnAsc = 'changed_on_ASC',
+  ChangedOnDesc = 'changed_on_DESC',
+  ClientAsc = 'client_ASC',
+  ClientDesc = 'client_DESC',
+  CreatedOn = 'created_on',
+  CreatedOnAsc = 'created_on_ASC',
+  CreatedOnDesc = 'created_on_DESC',
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  PreviewAsc = 'preview_ASC',
+  PreviewDesc = 'preview_DESC',
+  PublishOn = 'publish_on',
+  PublishOnAsc = 'publish_on_ASC',
+  PublishOnDesc = 'publish_on_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export type PortfolioWhereInput = {
+  _changed_on_gt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _changed_on_gte?: InputMaybe<Scalars['_DateTime']['input']>;
+  _changed_on_lt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _changed_on_lte?: InputMaybe<Scalars['_DateTime']['input']>;
+  _created_on_gt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _created_on_gte?: InputMaybe<Scalars['_DateTime']['input']>;
+  _created_on_lt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _created_on_lte?: InputMaybe<Scalars['_DateTime']['input']>;
+  /** Matches if the Id field is equal to one of the items in the given list. */
+  _id_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches if the Id field is not equal to one of the items in the given list. */
+  _id_nany?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** The `_or` filter returns a filter value if at least one of the clause in the _or is true. This beta filter currently supports the Id, Slug, Created On, Changed On, Published On, Text, Integer, Float, Boolean, and DateTime field types, for references only Text, Integer, Float, Boolean and exists (at least one item) fields are supported. */
+  _or?: InputMaybe<Array<PortfolioWhereInput>>;
+  _publish_on_gt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _publish_on_gte?: InputMaybe<Scalars['_DateTime']['input']>;
+  _publish_on_lt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _publish_on_lte?: InputMaybe<Scalars['_DateTime']['input']>;
+  /** Matches any content item containing the given text term (full-text search). */
+  _search?: InputMaybe<Scalars['String']['input']>;
+  _search_options?: InputMaybe<SearchOptionsInput>;
+  _slug_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  _slug_nany?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches any content item tagged with all items from the given list. */
+  _tags_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches any content item tagged with at least one item from the given list. */
+  _tags_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches any content item that is tagged. */
+  _tags_has?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Matches any content item not tagged with an item from the given list. */
+  _tags_nany?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches if the field is equal to the given value. */
+  client?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field matches any of the given values. */
+  client_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Full fuzzy text search, not case sensitive. */
+  client_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field ends with the given value. */
+  client_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** Excludes with full fuzzy text search, not case sensitive. */
+  client_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field starts with the given value. */
+  client_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field is equal to the given value. */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field matches any of the given values. */
+  description_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Full fuzzy text search, not case sensitive. */
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field ends with the given value. */
+  description_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** Excludes with full fuzzy text search, not case sensitive. */
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field starts with the given value. */
+  description_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field is equal to the given value. */
+  preview?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field matches any of the given values. */
+  preview_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Full fuzzy text search, not case sensitive. */
+  preview_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field ends with the given value. */
+  preview_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** Excludes with full fuzzy text search, not case sensitive. */
+  preview_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field starts with the given value. */
+  preview_starts_with?: InputMaybe<Scalars['String']['input']>;
+  tags_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  tags_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  tags_has?: InputMaybe<Scalars['Boolean']['input']>;
+  tags_nany?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches if the field is equal to the given value. */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field matches any of the given values. */
+  title_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Full fuzzy text search, not case sensitive. */
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field ends with the given value. */
+  title_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** Excludes with full fuzzy text search, not case sensitive. */
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field starts with the given value. */
+  title_starts_with?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** List of Portfolios items. */
+export type Portfolios = {
+  items: Array<Portfolio>;
+  total: Scalars['Int']['output'];
+};
+
 export type Query = {
-  __typename?: 'Query';
   /** Retrieve a single Article. */
   Article?: Maybe<Article>;
   /** Retrieve multiple Articles. */
@@ -337,10 +521,20 @@ export type Query = {
   ContentItems?: Maybe<ContentItems>;
   /** Recommendation recipe suitable for recommending Articles which are similar to the giving item */
   PeopleAlsoViewed_Articles?: Maybe<Articles>;
+  /** Recommendation recipe suitable for recommending Portfolios which are similar to the giving item */
+  PeopleAlsoViewed_Portfolios?: Maybe<Portfolios>;
   /** Recommendation recipe suitable for recommending globally popular Articles */
   Popular_Articles?: Maybe<Articles>;
+  /** Recommendation recipe suitable for recommending globally popular Portfolios */
+  Popular_Portfolios?: Maybe<Portfolios>;
+  /** Retrieve a single Portfolio. */
+  Portfolio?: Maybe<Portfolio>;
+  /** Retrieve multiple Portfolios. */
+  Portfolios?: Maybe<Portfolios>;
   /** Recommendation recipe suitable for recommending Articles which are similar to the giving item */
   Similar_Articles?: Maybe<Articles>;
+  /** Recommendation recipe suitable for recommending Portfolios which are similar to the giving item */
+  Similar_Portfolios?: Maybe<Portfolios>;
 };
 
 
@@ -383,6 +577,17 @@ export type QueryPeopleAlsoViewed_ArticlesArgs = {
 };
 
 
+export type QueryPeopleAlsoViewed_PortfoliosArgs = {
+  id: Scalars['String']['input'];
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  locales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  rules?: InputMaybe<SimilarRulesInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PortfolioWhereInput>;
+};
+
+
 export type QueryPopular_ArticlesArgs = {
   events?: InputMaybe<Array<InputMaybe<_Event>>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -390,6 +595,34 @@ export type QueryPopular_ArticlesArgs = {
   locales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ArticleWhereInput>;
+};
+
+
+export type QueryPopular_PortfoliosArgs = {
+  events?: InputMaybe<Array<InputMaybe<_Event>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  locales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PortfolioWhereInput>;
+};
+
+
+export type QueryPortfolioArgs = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  locale?: Scalars['String']['input'];
+  locales?: InputMaybe<Array<Scalars['String']['input']>>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryPortfoliosArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: Scalars['String']['input'];
+  locales?: InputMaybe<Array<Scalars['String']['input']>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  sort?: InputMaybe<PortfolioSortInput>;
+  where?: InputMaybe<PortfolioWhereInput>;
 };
 
 
@@ -401,6 +634,17 @@ export type QuerySimilar_ArticlesArgs = {
   rules?: InputMaybe<SimilarRulesInput>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ArticleWhereInput>;
+};
+
+
+export type QuerySimilar_PortfoliosArgs = {
+  id: Scalars['String']['input'];
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  locales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  rules?: InputMaybe<SimilarRulesInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PortfolioWhereInput>;
 };
 
 export type SearchOptionsInput = {
@@ -418,7 +662,6 @@ export type SimilarRulesInput = {
 };
 
 export type Tag = {
-  __typename?: 'Tag';
   _id?: Maybe<Scalars['String']['output']>;
   body?: Maybe<Scalars['String']['output']>;
   slug?: Maybe<Scalars['String']['output']>;
@@ -437,10 +680,24 @@ export enum _Event {
   Vote = 'Vote'
 }
 
-export type ExampleQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetArticlesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ExampleQueryQuery = { __typename?: 'Query', Articles?: { __typename?: 'Articles', total: number, items: Array<{ __typename?: 'Article', title?: string | null, description?: string | null, body?: string | null, shortname?: string | null, tags?: Array<{ __typename?: 'Tag', _id?: string | null, body?: string | null, slug?: string | null } | null> | null, banner?: { __typename?: 'Asset', url?: string | null } | null }> } | null };
+export type GetArticlesQueryQuery = { Articles?: { total: number, items: Array<{ _id: string, title?: string | null, description?: string | null, body?: string | null, shortname?: string | null, tags?: Array<{ _id?: string | null, body?: string | null, slug?: string | null } | null> | null, banner?: { url?: string | null } | null }> } | null };
+
+export type GetArticleQueryQueryVariables = Exact<{
+  articleId?: InputMaybe<Scalars['String']['input']>;
+}>;
 
 
-export const ExampleQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"ExampleQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Articles"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"body"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_id"}},{"kind":"Field","name":{"kind":"Name","value":"body"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"shortname"}},{"kind":"Field","name":{"kind":"Name","value":"banner"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"total"}}]}}]}}]} as unknown as DocumentNode<ExampleQueryQuery, ExampleQueryQueryVariables>;
+export type GetArticleQueryQuery = { Article?: { title?: string | null, description?: string | null, body?: string | null, shortname?: string | null, tags?: Array<{ _id?: string | null, body?: string | null, slug?: string | null } | null> | null, banner?: { url?: string | null } | null } | null };
+
+export type GetPortfoliosQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetPortfoliosQuery = { Portfolios?: { items: Array<{ title?: string | null, preview?: string | null, description?: string | null, client?: string | null, tags?: Array<{ _id?: string | null, body?: string | null } | null> | null, banner?: { url?: string | null } | null }> } | null };
+
+
+export const GetArticlesQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getArticlesQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Articles"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"body"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_id"}},{"kind":"Field","name":{"kind":"Name","value":"body"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"shortname"}},{"kind":"Field","name":{"kind":"Name","value":"banner"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"total"}}]}}]}}]} as unknown as DocumentNode<GetArticlesQueryQuery, GetArticlesQueryQueryVariables>;
+export const GetArticleQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getArticleQuery"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"articleId"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Article"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"articleId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"body"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_id"}},{"kind":"Field","name":{"kind":"Name","value":"body"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"shortname"}},{"kind":"Field","name":{"kind":"Name","value":"banner"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetArticleQueryQuery, GetArticleQueryQueryVariables>;
+export const GetPortfoliosDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getPortfolios"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Portfolios"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_id"}},{"kind":"Field","name":{"kind":"Name","value":"body"}}]}},{"kind":"Field","name":{"kind":"Name","value":"preview"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"client"}},{"kind":"Field","name":{"kind":"Name","value":"banner"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetPortfoliosQuery, GetPortfoliosQueryVariables>;

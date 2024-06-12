@@ -1,16 +1,23 @@
+import { Article } from "@/types/articles";
 import Image from "next/image";
 import Link from "next/link";
 
-const ArticleBox: React.FC = () => {
+const ArticleBox: React.FC<Article> = ({
+  title,
+  description,
+  banner,
+  _id
+}) => {
   return (
     <div className="dark:bg-darkBrown rounded-md overflow-hidden max-w-lg">
       {/* banner */}
       <Link
         className="block border-b-[6px] border-yellowColor"
-        href="/articles/test-article"
+        href={`/articles/${_id}`}
       >
-        <Image
-          src="https://tunis-next.netlify.app/assets/img/blog/blog-post-1.jpg"
+         {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={banner?.url!}
           alt="article banner"
           width="10000"
           height="10000"
@@ -22,12 +29,13 @@ const ArticleBox: React.FC = () => {
       tracking-wider hover:text-yellowColor"
         href="/articles/test-article"
       >
-        How to Own Your Audience by Creating an Email List
+        {title}
       </Link>
       {/* description */}
       <p className="px-6 pb-6 leading-7">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore ...
+        {description?.length! > 100
+          ? description?.slice(0, 100) + " . . ."
+          : description}
       </p>
     </div>
   );

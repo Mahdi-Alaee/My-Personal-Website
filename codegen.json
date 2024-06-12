@@ -5,7 +5,10 @@
   "generates": {
     "./generated/": {
       "preset": "client",
-      "plugins": []
+      "plugins": [],
+      "config": {
+        "skipTypename": true
+      }
     }
   }
 }

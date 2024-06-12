@@ -1,12 +1,16 @@
-import Image from "next/image";
+import { getArticle } from "@/graphql/queries";
 import { FaCalendar, FaTags, FaUser } from "react-icons/fa";
 
 interface ArticleProps {
   params: { article: string };
 }
 
-const Article: React.FC<ArticleProps> = ({ params }) => {
-  // const article = params.article;
+const Article: React.FC<ArticleProps> = async ({ params }) => {
+  const articleId = params.article;
+
+  const article = await getArticle(articleId);
+
+  console.log(article);
 
   return (
     <div className="pt-44 sm:pt-16">
@@ -39,53 +43,29 @@ const Article: React.FC<ArticleProps> = ({ params }) => {
           <li className="flex gap-x-2">
             <FaTags className="text-xs text-yellowColor" />
             <span className="text-xs">
-              wordpress, business, economy, design
+              {article?.tags?.map((tag, index) => (
+                <span key={tag?._id!}>
+                  {tag?.body} {index !== article?.tags?.length! - 1 && "_"}{" "}
+                </span>
+              ))}
             </span>
           </li>
         </ul>
         {/* title */}
         <h1 className="text-2xl font-bold my-4 sm:text-4xl">
-          How To Own Your Audience By Creating An Email List
+          {article?.title}
         </h1>
         {/* banner */}
-        <Image
-          src="https://tunis-next.netlify.app/assets/img/blog/blog-post-1.jpg"
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={article?.banner?.url!}
           alt="article banner"
           width="10000"
           height="10000"
         />
         {/* article body */}
         <div className="flex flex-col gap-y-10 leading-7">
-          {/* paragraph */}
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          {/* paragraph */}
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          {/* paragraph */}
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <article dangerouslySetInnerHTML={{ __html: article?.body! }} />
         </div>
       </div>
     </div>
