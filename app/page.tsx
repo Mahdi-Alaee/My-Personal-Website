@@ -1,9 +1,12 @@
-import HomeShape from "@/components/HomeShape/HomeShape";
 import LinkButton from "@/components/LinkButton/LinkButton";
+import { useArticles } from "@/graphql/hooks";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function HomePage() {
+  
+  useArticles();
+
   return (
     <div
       className="w-screen h-screen pt-80 px-6 sm:pt-40 lg:flex lg:pr-24 lg:p-10 lg:gap-x-16 

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"graphql-codegen --config --watch codegen.json\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.10.4",
+    "@parcel/watcher": "^2.4.1",
     "graphql": "^16.8.1",
     "next": "14.2.3",
     "next-themes": "^0.3.0",
@@ -25,6 +26,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^8.2.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
