@@ -11,6 +11,7 @@ const MySkills: React.FC = () => {
     { id: 7, percentage: 93, text: "tailwind" },
     { id: 8, percentage: 50, text: "bootstrap" },
     { id: 9, percentage: 90, text: "NextJs" },
+    { id: 9, percentage: 99, text: "GraphQl" },
   ];
 
   return (
