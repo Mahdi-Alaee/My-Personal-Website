@@ -2,15 +2,15 @@ import SkillBox from "./SkillBox";
 
 const MySkills: React.FC = () => {
   const skills = [
-    { id: 1, percentage: 91, text: "HTML" },
-    { id: 2, percentage: 89, text: "CSS" },
-    { id: 3, percentage: 82, text: "JavaScript" },
-    { id: 4, percentage: 91, text: "REACT" },
-    { id: 5, percentage: 81, text: "TypeScript" },
-    { id: 6, percentage: 97, text: "Redux" },
-    { id: 7, percentage: 93, text: "tailwind" },
+    { id: 1, percentage: 99, text: "HTML" },
+    { id: 2, percentage: 99, text: "CSS" },
+    { id: 7, percentage: 99, text: "tailwind" },
     { id: 8, percentage: 50, text: "bootstrap" },
-    { id: 9, percentage: 90, text: "NextJs" },
+    { id: 3, percentage: 99, text: "JavaScript" },
+    { id: 4, percentage: 99, text: "REACT" },
+    { id: 6, percentage: 99, text: "Redux" },
+    { id: 5, percentage: 99, text: "TypeScript" },
+    { id: 9, percentage: 99, text: "NextJs" },
     { id: 9, percentage: 99, text: "GraphQl" },
   ];
 

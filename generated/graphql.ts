@@ -19,7 +19,7 @@ export type Scalars = {
 };
 
 /** This union type holds all content models. */
-export type AllModels = Article | Portfolio;
+export type AllModels = Article | Contact | Portfolio;
 
 /** Single Article. */
 export type Article = Model & {
@@ -254,6 +254,175 @@ export enum AssetAlignment {
   Left = 'left',
   Right = 'right'
 }
+
+/** Single Contact. */
+export type Contact = Model & {
+  /** Count of bookmark events. */
+  _bookmarks: Scalars['Int']['output'];
+  /** The time the content item was changed. */
+  _changed_on: Scalars['String']['output'];
+  /**
+   * Count of clicktrough events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
+  _clicktroughs: Scalars['Int']['output'];
+  /**
+   * Count of comment events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
+  _comments: Scalars['Int']['output'];
+  _context?: Maybe<Context>;
+  /** The time the content item was created. */
+  _created_on: Scalars['String']['output'];
+  /** Id of your Prepr Environment. */
+  _environment_id: Scalars['String']['output'];
+  /** Unique identifier for each content item. */
+  _id: Scalars['String']['output'];
+  _last_published_on?: Maybe<Scalars['String']['output']>;
+  /** Count of like events. */
+  _likes: Scalars['Int']['output'];
+  _locale: Scalars['String']['output'];
+  _locales: Array<Scalars['String']['output']>;
+  /** This field returns all localizations for this content item. */
+  _localizations: Array<Contact>;
+  /** The time for when the content item is or will be published. */
+  _publish_on?: Maybe<Scalars['String']['output']>;
+  /**
+   * Count of purchase events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
+  _purchases: Scalars['Int']['output'];
+  /** Calculated time to read in minutes. */
+  _read_time?: Maybe<Scalars['Int']['output']>;
+  /**
+   * Count of share events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
+  _shares: Scalars['Int']['output'];
+  /** Unique within Type, string identifier for each content item. */
+  _slug?: Maybe<Scalars['String']['output']>;
+  /** Count of subscribe events. */
+  _subscribes: Scalars['Int']['output'];
+  /** Count of view events. */
+  _views: Scalars['Int']['output'];
+  /**
+   * Count of vote events.
+   * @deprecated Will be removed in next version, use _event instead.
+   */
+  _votes: Scalars['Int']['output'];
+  email?: Maybe<Scalars['String']['output']>;
+  message?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  subject?: Maybe<Scalars['String']['output']>;
+};
+
+export enum ContactSortInput {
+  ChangedOn = 'changed_on',
+  ChangedOnAsc = 'changed_on_ASC',
+  ChangedOnDesc = 'changed_on_DESC',
+  CreatedOn = 'created_on',
+  CreatedOnAsc = 'created_on_ASC',
+  CreatedOnDesc = 'created_on_DESC',
+  EmailAsc = 'email_ASC',
+  EmailDesc = 'email_DESC',
+  MessageAsc = 'message_ASC',
+  MessageDesc = 'message_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  PublishOn = 'publish_on',
+  PublishOnAsc = 'publish_on_ASC',
+  PublishOnDesc = 'publish_on_DESC',
+  SubjectAsc = 'subject_ASC',
+  SubjectDesc = 'subject_DESC'
+}
+
+export type ContactWhereInput = {
+  _changed_on_gt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _changed_on_gte?: InputMaybe<Scalars['_DateTime']['input']>;
+  _changed_on_lt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _changed_on_lte?: InputMaybe<Scalars['_DateTime']['input']>;
+  _created_on_gt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _created_on_gte?: InputMaybe<Scalars['_DateTime']['input']>;
+  _created_on_lt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _created_on_lte?: InputMaybe<Scalars['_DateTime']['input']>;
+  /** Matches if the Id field is equal to one of the items in the given list. */
+  _id_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches if the Id field is not equal to one of the items in the given list. */
+  _id_nany?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** The `_or` filter returns a filter value if at least one of the clause in the _or is true. This beta filter currently supports the Id, Slug, Created On, Changed On, Published On, Text, Integer, Float, Boolean, and DateTime field types, for references only Text, Integer, Float, Boolean and exists (at least one item) fields are supported. */
+  _or?: InputMaybe<Array<ContactWhereInput>>;
+  _publish_on_gt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _publish_on_gte?: InputMaybe<Scalars['_DateTime']['input']>;
+  _publish_on_lt?: InputMaybe<Scalars['_DateTime']['input']>;
+  _publish_on_lte?: InputMaybe<Scalars['_DateTime']['input']>;
+  /** Matches any content item containing the given text term (full-text search). */
+  _search?: InputMaybe<Scalars['String']['input']>;
+  _search_options?: InputMaybe<SearchOptionsInput>;
+  _slug_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  _slug_nany?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches any content item tagged with all items from the given list. */
+  _tags_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches any content item tagged with at least one item from the given list. */
+  _tags_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches any content item that is tagged. */
+  _tags_has?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Matches any content item not tagged with an item from the given list. */
+  _tags_nany?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Matches if the field is equal to the given value. */
+  email?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field matches any of the given values. */
+  email_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Full fuzzy text search, not case sensitive. */
+  email_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field ends with the given value. */
+  email_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** Excludes with full fuzzy text search, not case sensitive. */
+  email_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field starts with the given value. */
+  email_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field is equal to the given value. */
+  message?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field matches any of the given values. */
+  message_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Full fuzzy text search, not case sensitive. */
+  message_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field ends with the given value. */
+  message_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** Excludes with full fuzzy text search, not case sensitive. */
+  message_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field starts with the given value. */
+  message_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field is equal to the given value. */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field matches any of the given values. */
+  name_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Full fuzzy text search, not case sensitive. */
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field ends with the given value. */
+  name_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** Excludes with full fuzzy text search, not case sensitive. */
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field starts with the given value. */
+  name_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field is equal to the given value. */
+  subject?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field matches any of the given values. */
+  subject_any?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Full fuzzy text search, not case sensitive. */
+  subject_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field ends with the given value. */
+  subject_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** Excludes with full fuzzy text search, not case sensitive. */
+  subject_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field starts with the given value. */
+  subject_starts_with?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** List of Contacts items. */
+export type Contacts = {
+  items: Array<Contact>;
+  total: Scalars['Int']['output'];
+};
 
 export type ContentItems = {
   items?: Maybe<Array<Maybe<AllModels>>>;
@@ -517,14 +686,22 @@ export type Query = {
   Article?: Maybe<Article>;
   /** Retrieve multiple Articles. */
   Articles?: Maybe<Articles>;
+  /** Retrieve a single Contact. */
+  Contact?: Maybe<Contact>;
+  /** Retrieve multiple Contacts. */
+  Contacts?: Maybe<Contacts>;
   /** Retrieve content items from all models. */
   ContentItems?: Maybe<ContentItems>;
   /** Recommendation recipe suitable for recommending Articles which are similar to the giving item */
   PeopleAlsoViewed_Articles?: Maybe<Articles>;
+  /** Recommendation recipe suitable for recommending Contacts which are similar to the giving item */
+  PeopleAlsoViewed_Contacts?: Maybe<Contacts>;
   /** Recommendation recipe suitable for recommending Portfolios which are similar to the giving item */
   PeopleAlsoViewed_Portfolios?: Maybe<Portfolios>;
   /** Recommendation recipe suitable for recommending globally popular Articles */
   Popular_Articles?: Maybe<Articles>;
+  /** Recommendation recipe suitable for recommending globally popular Contacts */
+  Popular_Contacts?: Maybe<Contacts>;
   /** Recommendation recipe suitable for recommending globally popular Portfolios */
   Popular_Portfolios?: Maybe<Portfolios>;
   /** Retrieve a single Portfolio. */
@@ -533,6 +710,8 @@ export type Query = {
   Portfolios?: Maybe<Portfolios>;
   /** Recommendation recipe suitable for recommending Articles which are similar to the giving item */
   Similar_Articles?: Maybe<Articles>;
+  /** Recommendation recipe suitable for recommending Contacts which are similar to the giving item */
+  Similar_Contacts?: Maybe<Contacts>;
   /** Recommendation recipe suitable for recommending Portfolios which are similar to the giving item */
   Similar_Portfolios?: Maybe<Portfolios>;
 };
@@ -553,6 +732,24 @@ export type QueryArticlesArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   sort?: InputMaybe<ArticleSortInput>;
   where?: InputMaybe<ArticleWhereInput>;
+};
+
+
+export type QueryContactArgs = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  locale?: Scalars['String']['input'];
+  locales?: InputMaybe<Array<Scalars['String']['input']>>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryContactsArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: Scalars['String']['input'];
+  locales?: InputMaybe<Array<Scalars['String']['input']>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  sort?: InputMaybe<ContactSortInput>;
+  where?: InputMaybe<ContactWhereInput>;
 };
 
 
@@ -577,6 +774,17 @@ export type QueryPeopleAlsoViewed_ArticlesArgs = {
 };
 
 
+export type QueryPeopleAlsoViewed_ContactsArgs = {
+  id: Scalars['String']['input'];
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  locales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  rules?: InputMaybe<SimilarRulesInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ContactWhereInput>;
+};
+
+
 export type QueryPeopleAlsoViewed_PortfoliosArgs = {
   id: Scalars['String']['input'];
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -595,6 +803,16 @@ export type QueryPopular_ArticlesArgs = {
   locales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ArticleWhereInput>;
+};
+
+
+export type QueryPopular_ContactsArgs = {
+  events?: InputMaybe<Array<InputMaybe<_Event>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  locales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ContactWhereInput>;
 };
 
 
@@ -634,6 +852,17 @@ export type QuerySimilar_ArticlesArgs = {
   rules?: InputMaybe<SimilarRulesInput>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ArticleWhereInput>;
+};
+
+
+export type QuerySimilar_ContactsArgs = {
+  id: Scalars['String']['input'];
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  locales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  rules?: InputMaybe<SimilarRulesInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ContactWhereInput>;
 };
 
 

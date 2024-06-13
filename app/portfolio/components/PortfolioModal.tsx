@@ -50,38 +50,27 @@ const PortfolioModal: React.FC<PortfolioModalProps> = async ({
           </Link>
           {/* title */}
           <h2 className="mt-28 text-center text-2xl font-bold text-yellowColor sm:text-4xl lg:mt-0">
-            IMAGE PROJECT
+            {portfolio?.title}
           </h2>
           {/* infos */}
           <div className="px-6 grid grid-cols-1 gap-y-3 mt-10 text-sm md:grid-cols-2">
             {/* info 1 */}
-            <div className="flex items-center gap-x-2">
+            <div className="flex flex-wrap items-center gap-x-2 mr-1">
               {/* icon */}
               <FiFileText className="text-base" />
               {/* title */}
-              <span>Project : </span>
+              <span className="shrink-0">Project : </span>
               {/* content */}
               <span className="font-medium text-yellowColor">
-                {portfolio?.title}
+                {portfolio?.description}
               </span>
             </div>
             {/* info 2 */}
-            <div className="flex items-center gap-x-2">
-              {/* icon */}
-              <BiUser className="text-base" />
-              {/* title */}
-              <span>Client : </span>
-              {/* content */}
-              <span className="font-medium text-yellowColor">
-                {portfolio?.client}
-              </span>
-            </div>
-            {/* info 3 */}
             <div className="flex items-center gap-x-2 flex-wrap">
               {/* icon */}
               <FaCode className="text-base" />
               {/* title */}
-              <span>languages and tools : </span>
+              <span className="shrink-0">languages and tools : </span>
               {/* content */}
               <span className="font-medium text-yellowColor">
                 {portfolio?.tags?.map((tag) => (
@@ -89,12 +78,23 @@ const PortfolioModal: React.FC<PortfolioModalProps> = async ({
                 ))}
               </span>
             </div>
+            {/* info 3 */}
+            <div className="flex items-center gap-x-2">
+              {/* icon */}
+              <BiUser className="text-base" />
+              {/* title */}
+              <span className="shrink-0">Client : </span>
+              {/* content */}
+              <span className="font-medium text-yellowColor">
+                {portfolio?.client}
+              </span>
+            </div>
             {/* info 4 */}
             <div className="flex items-center gap-x-2">
               {/* icon */}
               <FaExternalLinkAlt className="text-base" />
               {/* title */}
-              <span>Preview : </span>
+              <span className="shrink-0">Preview : </span>
               {/* content */}
               <Link
                 className="text-yellowColor underline"

@@ -35,7 +35,7 @@ export default async function HomePage() {
         </p>
         {/* description */}
         <p className="mt-4 leading-7 max-w-xl lg:mt-6 lg:mb-2 lg:leading-8 lg:text-lg">
-          I{"'"}m a react based front‑end developer focused on crafting clean &
+          I{"'"}m a react-based front‑end developer focused on crafting clean &
           user‑friendly experiences, I am passionate about building excellent
           software that improves the lives of those around me.
         </p>

@@ -59,16 +59,6 @@ const PersonalInfos: React.FC = () => {
             <span className="font-semibold">Iranian</span>
           </p>
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
-            <span className="opacity-80">GitHub :</span>{" "}
-            <Link
-              className="font-semibold text-yellowColor"
-              href="https://github.com/Mahdi-Alaee/"
-              target="_blank"
-            >
-              Mahdi-Alaee
-            </Link>
-          </p>
-          <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
             <span className="opacity-80">Instagram :</span>{" "}
             <Link
               href="https://www.instagram.com/mahdi.alaee1/"
@@ -81,6 +71,16 @@ const PersonalInfos: React.FC = () => {
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
             <span className="opacity-80">Language :</span>{" "}
             <span className="font-semibold">English : 70%</span>
+          </p>
+          <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
+            <span className="opacity-80">GitHub :</span>{" "}
+            <Link
+              className="font-semibold text-yellowColor"
+              href="https://github.com/Mahdi-Alaee/"
+              target="_blank"
+            >
+              Mahdi-Alaee
+            </Link>
           </p>
         </div>
         <LinkButton
