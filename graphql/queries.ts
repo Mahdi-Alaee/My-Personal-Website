@@ -69,3 +69,59 @@ export async function getArticle(id: string) {
 
   return Article;
 }
+
+export async function getPortfolio() {
+  const query = graphql(`
+    query getPortfolios {
+      Portfolios {
+        items {
+          _id
+          title
+          banner {
+            url
+          }
+        }
+      }
+    }
+  `);
+
+  const {
+    data: { Portfolios },
+  } = await client.query({
+    query,
+  });
+
+  return Portfolios?.items;
+}
+
+export async function getPortfolioById(id: string) {
+  const query = graphql(`
+    query getPortfolioById($portfolioId: String) {
+      Portfolio(id: $portfolioId) {
+        title
+        description
+        tags {
+          _id
+          body
+          slug
+        }
+        banner {
+          url
+        }
+        client
+        preview
+      }
+    }
+  `);
+
+  const {
+    data: { Portfolio },
+  } = await client.query({
+    query,
+    variables: {
+      portfolioId: id,
+    },
+  });
+
+  return Portfolio;
+}

@@ -15,7 +15,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 const documents = {
     "\n    query getArticlesQuery {\n      Articles {\n        items {\n          _id\n          title\n          description\n          body\n          tags {\n            _id\n            body\n            slug\n          }\n          shortname\n          banner {\n            url\n          }\n        }\n        total\n      }\n    }\n  ": types.GetArticlesQueryDocument,
     "\n    query getArticleQuery($articleId: String) {\n      Article(id: $articleId) {\n        title\n        description\n        body\n        tags {\n          _id\n          body\n          slug\n        }\n        shortname\n        banner {\n          url\n        }\n      }\n    }\n  ": types.GetArticleQueryDocument,
-    "\n    query getPortfolios {\n      Portfolios {\n        items {\n          title\n          tags {\n            _id\n            body\n          }\n          preview\n          description\n          client\n          banner {\n            url\n          }\n        }\n      }\n    }\n  ": types.GetPortfoliosDocument,
+    "\n    query getPortfolios {\n      Portfolios {\n        items {\n          _id\n          title\n          banner {\n            url\n          }\n        }\n      }\n    }\n  ": types.GetPortfoliosDocument,
+    "\n    query getPortfolioById($portfolioId: String) {\n      Portfolio(id: $portfolioId) {\n        title\n        description\n        tags {\n          _id\n          body\n          slug\n        }\n        banner {\n          url\n        }\n        client\n        preview\n      }\n    }\n  ": types.GetPortfolioByIdDocument,
 };
 
 /**
@@ -43,7 +44,11 @@ export function graphql(source: "\n    query getArticleQuery($articleId: String)
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    query getPortfolios {\n      Portfolios {\n        items {\n          title\n          tags {\n            _id\n            body\n          }\n          preview\n          description\n          client\n          banner {\n            url\n          }\n        }\n      }\n    }\n  "): (typeof documents)["\n    query getPortfolios {\n      Portfolios {\n        items {\n          title\n          tags {\n            _id\n            body\n          }\n          preview\n          description\n          client\n          banner {\n            url\n          }\n        }\n      }\n    }\n  "];
+export function graphql(source: "\n    query getPortfolios {\n      Portfolios {\n        items {\n          _id\n          title\n          banner {\n            url\n          }\n        }\n      }\n    }\n  "): (typeof documents)["\n    query getPortfolios {\n      Portfolios {\n        items {\n          _id\n          title\n          banner {\n            url\n          }\n        }\n      }\n    }\n  "];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    query getPortfolioById($portfolioId: String) {\n      Portfolio(id: $portfolioId) {\n        title\n        description\n        tags {\n          _id\n          body\n          slug\n        }\n        banner {\n          url\n        }\n        client\n        preview\n      }\n    }\n  "): (typeof documents)["\n    query getPortfolioById($portfolioId: String) {\n      Portfolio(id: $portfolioId) {\n        title\n        description\n        tags {\n          _id\n          body\n          slug\n        }\n        banner {\n          url\n        }\n        client\n        preview\n      }\n    }\n  "];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

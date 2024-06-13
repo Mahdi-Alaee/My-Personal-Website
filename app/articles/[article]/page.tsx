@@ -1,4 +1,5 @@
 import { getArticle } from "@/graphql/queries";
+import Image from "next/image";
 import { FaCalendar, FaTags, FaUser } from "react-icons/fa";
 
 interface ArticleProps {

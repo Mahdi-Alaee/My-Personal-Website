@@ -11,6 +11,7 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({banner,id,title}) => {
   return (
     <Link href={`/portfolio?show=true&selectedPortfolio=${id}`} className="group overflow-hidden rounded-lg relative cursor-pointer">
       {/* image */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <Image
         className="object-cover"
         src={banner}

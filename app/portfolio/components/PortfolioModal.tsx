@@ -4,28 +4,21 @@ import Link from "next/link";
 import { CgClose } from "react-icons/cg";
 import { BiUser } from "react-icons/bi";
 import Image from "next/image";
-import { portfolio } from "@/data";
-import { Portfolio } from "@/types/portfolio";
+import { getPortfolioById } from "@/graphql/queries";
 
 interface PortfolioModalProps {
   isModalOpen: boolean;
   selectedPortfolio: string;
 }
 
-const PortfolioModal: React.FC<PortfolioModalProps> = ({
+const PortfolioModal: React.FC<PortfolioModalProps> = async ({
   isModalOpen,
   selectedPortfolio,
 }) => {
   if (selectedPortfolio === "false") {
     return false;
   }
-  const {
-    client,
-    project,
-    languagesAndTools,
-    link: { href, text },
-    banner,
-  } = portfolio.find((item) => item.id === selectedPortfolio) as Portfolio;
+  const portfolio = await getPortfolioById(selectedPortfolio);
 
   return (
     // modal container
@@ -68,7 +61,9 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
               {/* title */}
               <span>Project : </span>
               {/* content */}
-              <span className="font-medium text-yellowColor">{project}</span>
+              <span className="font-medium text-yellowColor">
+                {portfolio?.title}
+              </span>
             </div>
             {/* info 2 */}
             <div className="flex items-center gap-x-2">
@@ -77,7 +72,9 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
               {/* title */}
               <span>Client : </span>
               {/* content */}
-              <span className="font-medium text-yellowColor">{client}</span>
+              <span className="font-medium text-yellowColor">
+                {portfolio?.client}
+              </span>
             </div>
             {/* info 3 */}
             <div className="flex items-center gap-x-2 flex-wrap">
@@ -87,7 +84,9 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
               <span>languages and tools : </span>
               {/* content */}
               <span className="font-medium text-yellowColor">
-                {languagesAndTools}
+                {portfolio?.tags?.map((tag) => (
+                  <span key={tag?._id}>{tag?.body}, </span>
+                ))}
               </span>
             </div>
             {/* info 4 */}
@@ -99,10 +98,10 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
               {/* content */}
               <Link
                 className="text-yellowColor underline"
-                href={href}
+                href={portfolio?.preview!}
                 target="_blank"
               >
-                {text}
+                {portfolio?.preview}
               </Link>
             </div>
           </div>
@@ -110,7 +109,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
           {/* media */}
           <div className="px-6 mt-6">
             <Image
-              src={banner}
+              src={portfolio?.banner?.url!}
               alt=""
               className="w-full h-full rounded-md"
               width="10000"

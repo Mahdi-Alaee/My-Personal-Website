@@ -1,4 +1,5 @@
-import { portfolio } from "@/data";
+// import { portfolio } from "@/data";
+import { getPortfolio } from "@/graphql/queries";
 import PortfolioBox from "./components/PortfolioBox";
 import PortfolioModal from "./components/PortfolioModal";
 
@@ -6,9 +7,12 @@ interface PortfolioProps {
   searchParams: { show?: string; selectedPortfolio?: string };
 }
 
-const Portfolio: React.FC<PortfolioProps> = ({ searchParams }) => {
+const Portfolio: React.FC<PortfolioProps> = async ({ searchParams }) => {
   const isModalOpen = searchParams.show === "true" ? true : false;
   const selectedPortfolio = searchParams?.selectedPortfolio || "false";
+
+  const portfolio = await getPortfolio();
+  console.log(portfolio);
 
   return (
     <div
@@ -31,8 +35,13 @@ const Portfolio: React.FC<PortfolioProps> = ({ searchParams }) => {
 
       {/* content */}
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:mt-20 lg:grid-cols-3">
-        {portfolio.map(({ id, title, banner }) => (
-          <PortfolioBox key={id} banner={banner} id={id} title={title} />
+        {portfolio!.map(({ _id, title, banner }) => (
+          <PortfolioBox
+            key={_id}
+            banner={banner?.url!}
+            id={_id}
+            title={title!}
+          />
         ))}
       </div>
 

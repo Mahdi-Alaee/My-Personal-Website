@@ -2,12 +2,7 @@ import { Article } from "@/types/articles";
 import Image from "next/image";
 import Link from "next/link";
 
-const ArticleBox: React.FC<Article> = ({
-  title,
-  description,
-  banner,
-  _id
-}) => {
+const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
   return (
     <div className="dark:bg-darkBrown rounded-md overflow-hidden max-w-lg">
       {/* banner */}
@@ -15,7 +10,7 @@ const ArticleBox: React.FC<Article> = ({
         className="block border-b-[6px] border-yellowColor"
         href={`/articles/${_id}`}
       >
-         {/* eslint-disable-next-line @next/next/no-img-element */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={banner?.url!}
           alt="article banner"
