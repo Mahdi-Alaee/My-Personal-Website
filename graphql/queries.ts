@@ -1,4 +1,5 @@
 import { graphql } from "@/generated/gql";
+import { SkillSortInput } from "@/generated/graphql";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 export const client = new ApolloClient({
@@ -124,4 +125,27 @@ export async function getPortfolioById(id: string) {
   });
 
   return Portfolio;
+}
+
+export async function getSkills() {
+  const query = graphql(`
+    query getSkills($sort: SkillSortInput) {
+      Skills(sort: $sort) {
+        items {
+          _id
+          title
+          percentage
+        }
+      }
+    }
+  `);
+
+  const { data } = await client.query({
+    query,
+    variables: {
+      sort: SkillSortInput.PublishOnAsc,
+    },
+  });
+
+  return data.Skills?.items;
 }

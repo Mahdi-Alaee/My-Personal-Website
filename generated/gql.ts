@@ -17,6 +17,7 @@ const documents = {
     "\n    query getArticleQuery($articleId: String) {\n      Article(id: $articleId) {\n        title\n        description\n        body\n        tags {\n          _id\n          body\n          slug\n        }\n        shortname\n        banner {\n          url\n        }\n      }\n    }\n  ": types.GetArticleQueryDocument,
     "\n    query getPortfolios {\n      Portfolios {\n        items {\n          _id\n          title\n          banner {\n            url\n          }\n        }\n      }\n    }\n  ": types.GetPortfoliosDocument,
     "\n    query getPortfolioById($portfolioId: String) {\n      Portfolio(id: $portfolioId) {\n        title\n        description\n        tags {\n          _id\n          body\n          slug\n        }\n        banner {\n          url\n        }\n        client\n        preview\n      }\n    }\n  ": types.GetPortfolioByIdDocument,
+    "\n    query getSkills($sort: SkillSortInput) {\n      Skills(sort: $sort) {\n        items {\n          _id\n          title\n          percentage\n        }\n      }\n    }\n  ": types.GetSkillsDocument,
 };
 
 /**
@@ -49,6 +50,10 @@ export function graphql(source: "\n    query getPortfolios {\n      Portfolios {
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n    query getPortfolioById($portfolioId: String) {\n      Portfolio(id: $portfolioId) {\n        title\n        description\n        tags {\n          _id\n          body\n          slug\n        }\n        banner {\n          url\n        }\n        client\n        preview\n      }\n    }\n  "): (typeof documents)["\n    query getPortfolioById($portfolioId: String) {\n      Portfolio(id: $portfolioId) {\n        title\n        description\n        tags {\n          _id\n          body\n          slug\n        }\n        banner {\n          url\n        }\n        client\n        preview\n      }\n    }\n  "];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    query getSkills($sort: SkillSortInput) {\n      Skills(sort: $sort) {\n        items {\n          _id\n          title\n          percentage\n        }\n      }\n    }\n  "): (typeof documents)["\n    query getSkills($sort: SkillSortInput) {\n      Skills(sort: $sort) {\n        items {\n          _id\n          title\n          percentage\n        }\n      }\n    }\n  "];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

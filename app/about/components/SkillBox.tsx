@@ -4,11 +4,11 @@ import { useTheme } from "next-themes";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 interface SkillBoxProps {
-  text: string;
+  title: string;
   percentage: number;
 }
 
-const SkillBox: React.FC<SkillBoxProps> = ({ text, percentage }) => {
+const SkillBox: React.FC<SkillBoxProps> = ({ title, percentage }) => {
   const { theme } = useTheme();
 
   return (
@@ -25,7 +25,7 @@ const SkillBox: React.FC<SkillBoxProps> = ({ text, percentage }) => {
           })}
         />
       </div>
-      <h6 className="text-lg">{text}</h6>
+      <h6 className="text-lg">{title}</h6>
     </div>
   );
 };
