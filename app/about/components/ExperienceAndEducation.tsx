@@ -1,10 +1,12 @@
 // import { useAppSelector } from "../../../Redux/store";
-import { educations, experiences } from "@/data";
+import { experiences } from "@/data";
 import EBox from "../../../components/EBox";
 import { EBoxType } from "@/types/about";
+import { getEducations } from "@/graphql/queries";
+import Education from "./Education";
 
-const ExperienceAndEducation: React.FC = () => {
-  const educationsData = educations as EBoxType[];
+const ExperienceAndEducation: React.FC = async () => {
+  const educations = await getEducations();
   const experiencesData = experiences as EBoxType[];
 
   return (
@@ -24,8 +26,8 @@ const ExperienceAndEducation: React.FC = () => {
         </div>
         {/* education section */}
         <div className="grid grid-cols-1 gap-y-12">
-          {[...educationsData].reverse().map((education) => (
-            <EBox key={education.id} {...education} />
+          {[...educations!].map((education) => (
+            <Education key={education._id} {...education} />
           ))}
         </div>
       </div>

@@ -11,3 +11,13 @@ export interface EBoxType {
     text: string;
   }[];
 }
+
+export interface EducationType {
+  _id: string;
+  degree?: string | null;
+  description?: string | null;
+  related_link_text?: string | null;
+  related_link_url?: string | null;
+  start_end_date?: string | null;
+  university?: string | null;
+}
