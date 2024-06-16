@@ -4,6 +4,11 @@ import Input from "./component/Input";
 import Social from "./component/Social";
 import { BiSend } from "react-icons/bi";
 import { FaEnvelopeOpen, FaGithub, FaInstagram, FaPhone, FaTelegram } from "react-icons/fa";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Contact'
+}
 
 const Contact: React.FC = () => {
   return (

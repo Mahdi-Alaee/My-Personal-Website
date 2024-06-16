@@ -1,5 +1,10 @@
 import ArticleBox from "@/components/ArticleBox";
 import { getArticles } from "@/graphql/queries";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Blog'
+}
 
 const Articles: React.FC = async () => {
   const data = await getArticles();

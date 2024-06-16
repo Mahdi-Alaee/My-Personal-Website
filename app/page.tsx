@@ -1,5 +1,4 @@
 import LinkButton from "@/components/LinkButton/LinkButton";
-import { getArticles } from "@/graphql/queries";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 

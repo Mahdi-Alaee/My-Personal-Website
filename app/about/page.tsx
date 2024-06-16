@@ -1,6 +1,11 @@
+import { Metadata } from "next";
 import ExperienceAndEducation from "./components/ExperienceAndEducation";
 import MySkills from "./components/MySkills";
 import PersonalInfos from "./components/PersonalInfos";
+
+export const metadata: Metadata = {
+  title: 'About Me'
+}
 
 const About: React.FC = () => {
 
