@@ -1,5 +1,9 @@
 import { graphql } from "@/generated/gql";
-import { EducationSortInput, SkillSortInput } from "@/generated/graphql";
+import {
+  EducationSortInput,
+  ExperienceSortInput,
+  SkillSortInput,
+} from "@/generated/graphql";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 export const client = new ApolloClient({
@@ -179,4 +183,31 @@ export async function getEducations() {
   });
 
   return Educations?.items;
+}
+
+export async function getExperiences() {
+  const query = graphql(`
+    query getExperiences($sort: ExperienceSortInput) {
+      Experiences(sort: $sort) {
+        items {
+          _id
+          company
+          description
+          related_link_text
+          related_link_url
+          start_end_date
+          work
+        }
+      }
+    }
+  `);
+
+  const {data: {Experiences}} = await client.query({
+    query,
+    variables: {
+      sort: ExperienceSortInput.PublishOnDesc,
+    },
+  });
+
+  return Experiences?.items;
 }

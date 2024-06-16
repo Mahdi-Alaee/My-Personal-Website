@@ -108,7 +108,8 @@ const PortfolioModal: React.FC<PortfolioModalProps> = async ({
 
           {/* media */}
           <div className="px-6 mt-6">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={portfolio?.banner?.url!}
               alt=""
               className="w-full h-full rounded-md"

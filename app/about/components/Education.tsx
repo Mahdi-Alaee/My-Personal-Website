@@ -3,7 +3,6 @@ import { EducationType } from "@/types/about";
 import Link from "next/link";
 
 const Education: React.FC<EducationType> = ({
-  _id,
   degree,
   description,
   related_link_text,
