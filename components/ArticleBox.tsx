@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
+  console.log({banner});
+  
   return (
     <div className="dark:bg-darkBrown rounded-md overflow-hidden max-w-lg">
       {/* banner */}
@@ -11,7 +13,7 @@ const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
         href={`/articles/${_id}`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={banner?.url!}
           alt="article banner"
           width="10000"

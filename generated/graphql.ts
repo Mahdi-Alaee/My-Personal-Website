@@ -461,10 +461,10 @@ export type Context = {
   countries?: Maybe<Array<Scalars['String']['output']>>;
   /** The unique identifier for an A/B test or personalization block used for analytics. */
   group_id?: Maybe<Scalars['String']['output']>;
-  /** Returns the kind of personalized content: `PERSONALIZATION` | A`B_TEST`. */
+  /** Returns the kind of personalized content: `PERSONALIZATION` | `AB_TEST`. */
   kind?: Maybe<Scalars['String']['output']>;
   segments?: Maybe<Array<Scalars['String']['output']>>;
-  /** A variant ID is a unique identifier assigned to each variant in an A/B test (A/B) or personalization. */
+  /** A variant ID is a unique identifier assigned to each variant in an A/B test (A/B) or personalization and contains the segments it has been linked too. */
   variant_id?: Maybe<Scalars['String']['output']>;
   /** The unique identifier for an A/B test or personalization variant used for analytics. */
   variant_key?: Maybe<Scalars['String']['output']>;

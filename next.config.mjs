@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         protocol: "https",
       },
+      {
+        hostname: "mahdi-alaee.files.prepr.io",
+        pathname: "/**",
+        port: "",
+        protocol: "https",
+      },
     ],
   },
 };
