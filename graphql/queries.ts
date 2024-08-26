@@ -71,7 +71,7 @@ export async function getArticle(id: string) {
     variables: {
       articleId: id,
     },
-    fetchPolicy: "network-only",
+    fetchPolicy: "no-cache",
   });
 
   console.log({Article});
