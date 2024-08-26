@@ -1,3 +1,4 @@
+import RichImage from "@/components/RichImage";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,12 +13,13 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({banner,id,title}) => {
     <Link href={`/portfolio?show=true&selectedPortfolio=${id}`} className="group overflow-hidden rounded-lg relative cursor-pointer">
       {/* image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <Image
+      <RichImage
         className="object-cover"
         src={banner}
         alt="mahdi alaee | portfolio image"
-        width="10000"
-        height="10000"
+        imageLoadedClass="h-52"
+        imageLoadingClass=""
+        loadingHeight={180}
       />
       {/* hover element */}
       <div

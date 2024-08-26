@@ -22,8 +22,8 @@ const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
           width="10000"
           height="10000"
           className=''
-          imageLoadedClass="h-52 opacity-100"
-          imageLoadingClass="h-0 opacity-0"
+          imageLoadedClass="h-52"
+          imageLoadingClass="h-0"
           loadingHeight={208}
         />
       </Link>

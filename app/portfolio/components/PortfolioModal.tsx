@@ -5,6 +5,7 @@ import { CgClose } from "react-icons/cg";
 import { BiUser } from "react-icons/bi";
 import Image from "next/image";
 import { getPortfolioById } from "@/graphql/queries";
+import RichImage from "@/components/RichImage";
 
 interface PortfolioModalProps {
   isModalOpen: boolean;
@@ -109,12 +110,13 @@ const PortfolioModal: React.FC<PortfolioModalProps> = async ({
           {/* media */}
           <div className="px-6 mt-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <RichImage
               src={portfolio?.banner?.url!}
-              alt=""
-              className="w-full h-full rounded-md"
-              width="10000"
-              height="10000"
+              alt={portfolio?.title!}
+              className="w-full rounded-md"
+              loadingHeight={300}
+              imageLoadingClass="h-0"
+              imageLoadedClass="h-full"
             />
           </div>
         </div>

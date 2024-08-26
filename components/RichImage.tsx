@@ -5,9 +5,9 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { PropagateLoader } from "react-spinners";
 
 interface RichImageProps extends ImageProps {
-  imageLoadingClass: string;
-  imageLoadedClass: string;
-  loadingHeight: number;
+  imageLoadingClass?: string;
+  imageLoadedClass?: string;
+  loadingHeight?: number;
 }
 
 export default function RichImage({
@@ -37,9 +37,9 @@ export default function RichImage({
         width="10000"
         height="10000"
         onLoad={() => setImageLoading(false)}
-        className={`${
-          imageLoading ? imageLoadingClass : imageLoadedClass
-        } ${className}`}
+        className={`${className} ${
+          imageLoading ? imageLoadingClass + ' opacity-0' : imageLoadedClass + ' opacity-100'
+        }`}
       />
     </>
   );

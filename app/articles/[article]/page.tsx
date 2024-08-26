@@ -62,10 +62,8 @@ const Article: React.FC<ArticleProps> = async ({ params }) => {
         <RichImage
           src={article?.banner?.url!}
           alt={article?.title!}
-          width="10000"
-          height="10000"
-          imageLoadedClass="opacity-100"
-          imageLoadingClass="h-0 opacity-0"
+          imageLoadedClass=""
+          imageLoadingClass="h-0"
           loadingHeight={400}
         />
         {/* article body */}
