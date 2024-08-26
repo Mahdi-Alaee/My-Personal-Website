@@ -1,4 +1,5 @@
 
+import RichImage from "@/components/RichImage";
 import { getArticle } from "@/graphql/queries";
 import Image from "next/image";
 import { FaCalendar, FaTags, FaUser } from "react-icons/fa";
@@ -9,7 +10,6 @@ interface ArticleProps {
 
 const Article: React.FC<ArticleProps> = async ({ params }) => {
   const articleId = params.article;
-
   const article = await getArticle(articleId);
 
   console.log(article);
@@ -59,11 +59,14 @@ const Article: React.FC<ArticleProps> = async ({ params }) => {
         </h1>
         {/* banner */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <Image
+        <RichImage
           src={article?.banner?.url!}
           alt={article?.title!}
           width="10000"
           height="10000"
+          imageLoadedClass="opacity-100"
+          imageLoadingClass="h-0 opacity-0"
+          loadingHeight={400}
         />
         {/* article body */}
         <div className="flex flex-col gap-y-10 leading-7">
