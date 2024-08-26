@@ -10,7 +10,7 @@ interface PortfolioBoxProps {
 
 const PortfolioBox: React.FC<PortfolioBoxProps> = ({banner,id,title}) => {
   return (
-    <Link href={`/portfolio?show=true&selectedPortfolio=${id}`} className="group overflow-hidden rounded-lg relative cursor-pointer">
+    <Link href={`/portfolio?show=true&selectedPortfolio=${id}`} className="group overflow-hidden rounded-lg relative cursor-pointer shadow">
       {/* image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <RichImage
@@ -18,7 +18,7 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({banner,id,title}) => {
         src={banner}
         alt="mahdi alaee | portfolio image"
         imageLoadedClass="h-52"
-        imageLoadingClass=""
+        imageLoadingClass="h-0"
         loadingHeight={180}
       />
       {/* hover element */}

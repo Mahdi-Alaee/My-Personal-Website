@@ -23,7 +23,7 @@ export default function RichImage({
   return (
     <>
       <div
-        className={`bg-black justify-center items-center ${
+        className={`dark:bg-black bg-gray-100 justify-center items-center ${
           imageLoading ? "flex" : "hidden"
         }`}
         style={{height: loadingHeight}}

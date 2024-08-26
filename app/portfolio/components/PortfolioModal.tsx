@@ -39,7 +39,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = async ({
         <CgClose />
       </Link>
       {/* modal box */}
-      <div className="bg-gray-500 dark:bg-darkBrown w-full h-full pb-8 dark:text-white overflow-y-scroll lg:w-max lg:h-max lg:py-8 lg:rounded-xl lg:overflow-hidden">
+      <div className="bg-gray-100 dark:bg-darkBrown w-full h-full pb-8 dark:text-white overflow-y-scroll lg:w-max lg:h-max lg:py-8 lg:rounded-xl lg:overflow-hidden">
         {/* wrapper */}
         <div className="max-w-2xl mx-auto">
           {/* close button */}
