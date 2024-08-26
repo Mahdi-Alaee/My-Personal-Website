@@ -1,9 +1,13 @@
+'use client'
+
 import { Article } from "@/types/articles";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
-  console.log({banner});
+  const [imageFailed,setImageFailed] = useState();
+  console.log({banner:banner?.url,title});
   
   return (
     <div className="dark:bg-darkBrown rounded-md overflow-hidden max-w-lg">
@@ -15,9 +19,13 @@ const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <Image
           src={banner?.url!}
-          alt="article banner"
+          alt={title!}
           width="10000"
           height="10000"
+          onLoad={e => {
+            console.log(e);
+            
+          }}
         />
       </Link>
       {/* title */}

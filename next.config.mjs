@@ -6,13 +6,13 @@ const nextConfig = {
         hostname: "mahdi-alaee.stream.prepr.io",
         pathname: "/**",
         port: "",
-        protocol: "https",
+        protocol: 'https'        
       },
       {
         hostname: "mahdi-alaee.files.prepr.io",
         pathname: "/**",
         port: "",
-        protocol: "https",
+        protocol: 'https'        
       },
     ],
   },

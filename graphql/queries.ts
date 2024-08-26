@@ -39,6 +39,7 @@ export async function getArticles() {
     data: { Articles },
   } = await client.query({
     query,
+    fetchPolicy: "no-cache",
   });
 
   return Articles;
@@ -70,7 +71,11 @@ export async function getArticle(id: string) {
     variables: {
       articleId: id,
     },
+    fetchPolicy: "network-only",
   });
+
+  console.log({Article});
+  
 
   return Article;
 }
@@ -94,6 +99,7 @@ export async function getPortfolio() {
     data: { Portfolios },
   } = await client.query({
     query,
+    fetchPolicy: "no-cache",
   });
 
   return Portfolios?.items;
@@ -126,6 +132,7 @@ export async function getPortfolioById(id: string) {
     variables: {
       portfolioId: id,
     },
+    fetchPolicy: "no-cache",
   });
 
   return Portfolio;
@@ -151,6 +158,7 @@ export async function getSkills() {
     variables: {
       sort: SkillSortInput.PublishOnAsc,
     },
+    fetchPolicy: "no-cache",
   });
 
   return Skills?.items;
@@ -180,6 +188,7 @@ export async function getEducations() {
     variables: {
       sort: EducationSortInput.PublishOnDesc,
     },
+    fetchPolicy: "no-cache",
   });
 
   return Educations?.items;
@@ -202,11 +211,14 @@ export async function getExperiences() {
     }
   `);
 
-  const {data: {Experiences}} = await client.query({
+  const {
+    data: { Experiences },
+  } = await client.query({
     query,
     variables: {
       sort: ExperienceSortInput.PublishOnDesc,
     },
+    fetchPolicy: "no-cache",
   });
 
   return Experiences?.items;

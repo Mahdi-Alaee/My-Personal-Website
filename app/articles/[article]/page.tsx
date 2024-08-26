@@ -1,3 +1,4 @@
+
 import { getArticle } from "@/graphql/queries";
 import Image from "next/image";
 import { FaCalendar, FaTags, FaUser } from "react-icons/fa";
@@ -58,9 +59,9 @@ const Article: React.FC<ArticleProps> = async ({ params }) => {
         </h1>
         {/* banner */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={article?.banner?.url!}
-          alt="article banner"
+          alt={article?.title!}
           width="10000"
           height="10000"
         />
