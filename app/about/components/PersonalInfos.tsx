@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaDownload } from "react-icons/fa";
 import InfoBox from "./InfoBox";
 import Image from "next/image";
+import RichImage from "@/components/RichImage";
 
 const PersonalInfos: React.FC = () => {
   const boxInfos = [
@@ -19,14 +20,17 @@ const PersonalInfos: React.FC = () => {
         {/* title */}
         <h2 className="text-xl font-extrabold sm:text-3xl">PERSONAL INFOS</h2>
         {/* profile image */}
-        <Image
-          src="/images/my-profile.jpg"
-          alt="mahdi alaee | مهدی علایی"
-          className="w-60 h-60 rounded-full border-2 border-gray-800 object-cover 
+        <div
+          className="w-60 h-60 
             mx-auto mt-5 sm:hidden"
-          width="10000"
-          height="10000"
-        />
+        >
+          <RichImage
+            src="/images/my-profile.jpg"
+            alt="mahdi alaee | مهدی علایی"
+            className="object-cover w-full h-full rounded-full border-2 border-gray-800"
+            loadingClass="w-full h-full rounded-full border-2 border-gray-800"
+          />
+        </div>
         {/* personal data container */}
         <div className="grid grid-cols-2 mt-8 gap-y-6">
           {/* personal data item */}
@@ -44,7 +48,12 @@ const PersonalInfos: React.FC = () => {
           </p>
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
             <span className="opacity-80">Phone :</span>{" "}
-            <span className="font-semibold">+98 933 431 8411</span>
+            <Link
+              className="font-semibold text-yellowColor"
+              href="tel:09334318411"
+            >
+              +98 933 431 8411
+            </Link>
           </p>
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
             <span className="opacity-80">Age :</span>{" "}
@@ -52,7 +61,13 @@ const PersonalInfos: React.FC = () => {
           </p>
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1 lg:flex-col xl:flex-row">
             <span className="opacity-80">Email :</span>{" "}
-            <span className="font-semibold">mahdi.alaee.dev@gmail.com</span>
+            <Link
+              className="font-semibold text-yellowColor"
+              href="mailto:mahdi.alaee.dev@gmail.com"
+              target="_blank"
+            >
+              mahdi.alaee.dev@gmail.com
+            </Link>
           </p>
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
             <span className="opacity-80">Nationality :</span>{" "}
@@ -84,9 +99,11 @@ const PersonalInfos: React.FC = () => {
           </p>
         </div>
         <LinkButton
-          to="https://digikala.com"
+          // to="https://s32.picofile.com/file/8478671018/Mahdi_Alaee.pdf.html"
+          to="https://s32.picofile.com/d/8478671018/da50655c-82fc-46bf-947e-f81ea70e8aa4/Mahdi_Alaee.pdf"
           icon={<FaDownload />}
           className="max-w-64 mt-8"
+          target="_blank"
         >
           Download CV
         </LinkButton>

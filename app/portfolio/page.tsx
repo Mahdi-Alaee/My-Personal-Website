@@ -4,8 +4,9 @@ import PortfolioModal from "./components/PortfolioModal";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Portfolio'
-}
+  title: "Portfolio",
+};
+export const revalidate = 10;
 
 interface PortfolioProps {
   searchParams: { show?: string; selectedPortfolio?: string };
@@ -16,7 +17,6 @@ const Portfolio: React.FC<PortfolioProps> = async ({ searchParams }) => {
   const selectedPortfolio = searchParams?.selectedPortfolio || "false";
 
   const portfolio = await getPortfolio();
-  console.log(portfolio);
 
   return (
     <div

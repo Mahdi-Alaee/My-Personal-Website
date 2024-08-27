@@ -64,6 +64,7 @@ export async function getArticle(id: string) {
       }
     }
   `);
+  
   const {
     data: { Article },
   } = await client.query({
@@ -72,10 +73,7 @@ export async function getArticle(id: string) {
       articleId: id,
     },
     fetchPolicy: "no-cache",
-  });
-
-  console.log({Article});
-  
+  });  
 
   return Article;
 }
@@ -134,6 +132,9 @@ export async function getPortfolioById(id: string) {
     },
     fetchPolicy: "no-cache",
   });
+
+  console.log({Portfolio});
+  
 
   return Portfolio;
 }

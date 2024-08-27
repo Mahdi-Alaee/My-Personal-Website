@@ -1,18 +1,16 @@
 
 import RichImage from "@/components/RichImage";
 import { getArticle } from "@/graphql/queries";
-import Image from "next/image";
 import { FaCalendar, FaTags, FaUser } from "react-icons/fa";
 
 interface ArticleProps {
   params: { article: string };
 }
+export const revalidate = 10;
 
 const Article: React.FC<ArticleProps> = async ({ params }) => {
   const articleId = params.article;
   const article = await getArticle(articleId);
-
-  console.log(article);
 
   return (
     <div className="pt-44 sm:pt-16">
@@ -68,7 +66,7 @@ const Article: React.FC<ArticleProps> = async ({ params }) => {
         />
         {/* article body */}
         <div className="flex flex-col gap-y-10 leading-7">
-          <article dangerouslySetInnerHTML={{ __html: article?.body! }} />
+          <article dangerouslySetInnerHTML={{ __html: article?.body! || '<h2 class="text-red-500">Error</h2>' }} />
         </div>
       </div>
     </div>

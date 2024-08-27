@@ -8,7 +8,6 @@ import { PropagateLoader } from "react-spinners";
 import RichImage from "./RichImage";
 
 const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
-
   return (
     <div className="dark:bg-darkBrown shadow-xl rounded-md overflow-hidden max-w-lg">
       {/* banner */}
@@ -21,7 +20,7 @@ const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
           alt={title!}
           width="10000"
           height="10000"
-          className=''
+          className=""
           imageLoadedClass="h-52"
           imageLoadingClass="h-0"
           loadingHeight={208}
@@ -31,7 +30,7 @@ const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
       <Link
         className="block px-6 my-4 text-xl font-bold transition-colors duration-200
       tracking-wider hover:text-yellowColor"
-        href="/articles/test-article"
+        href={`/articles/${_id}`}
       >
         {title}
       </Link>

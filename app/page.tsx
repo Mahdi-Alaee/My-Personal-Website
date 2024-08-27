@@ -1,4 +1,5 @@
 import LinkButton from "@/components/LinkButton/LinkButton";
+import RichImage from "@/components/RichImage";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -9,16 +10,21 @@ export default async function HomePage() {
     lg:justify-between xl:justify-normal xl:gap-x-36 xxl:gap-x-56"
     >
       {/* profile image */}
-      <Image
-        src="/images/my-profile.jpg"
-        alt="mahdi alaee | مهدی علایی"
-        className="w-64 h-64 rounded-full border-2 border-gray-800 object-cover hidden 
+      <div
+        className="w-64 h-64 rounded-full border-2 border-gray-800  hidden 
         mx-auto mb-10 sm:block lg:w-5/12 lg:h-full  
         lg:gap-x-12 lg:rounded-3xl lg:border-none lg:m-0 xl:w-4/12"
-        style={{ boxShadow: "0 0 8px #000" }}
-        width={10000}
-        height={10000}
-      />
+      >
+        <RichImage
+          src="/images/my-profile.jpg"
+          alt="mahdi alaee | مهدی علایی"
+          className="object-cover rounded-full lg:rounded-3xl"
+          style={{ boxShadow: "0 0 8px #000" }}
+          imageLoadedClass="h-full"
+          imageLoadingClass="h-0"
+          loadingClass="rounded-full w-full h-full lg:rounded-3xl"
+        />
+      </div>
       {/* page content */}
       <div
         className="flex flex-col items-start sm:text-center sm:items-center lg:justify-center 

@@ -8,6 +8,7 @@ interface RichImageProps extends ImageProps {
   imageLoadingClass?: string;
   imageLoadedClass?: string;
   loadingHeight?: number;
+  loadingClass?: string;
 }
 
 export default function RichImage({
@@ -16,7 +17,9 @@ export default function RichImage({
   className,
   imageLoadedClass,
   imageLoadingClass,
-  loadingHeight
+  loadingHeight,
+  loadingClass,
+  style,
 }: RichImageProps) {
   const [imageLoading, setImageLoading] = useState(true);
 
@@ -25,7 +28,7 @@ export default function RichImage({
       <div
         className={`dark:bg-black bg-gray-100 justify-center items-center ${
           imageLoading ? "flex" : "hidden"
-        }`}
+        } ${loadingClass}`}
         style={{height: loadingHeight}}
       >
         <PropagateLoader color="#ffb400" />
@@ -40,6 +43,7 @@ export default function RichImage({
         className={`${className} ${
           imageLoading ? imageLoadingClass + ' opacity-0' : imageLoadedClass + ' opacity-100'
         }`}
+        style={style}
       />
     </>
   );

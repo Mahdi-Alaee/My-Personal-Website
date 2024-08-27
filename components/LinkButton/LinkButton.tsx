@@ -6,6 +6,7 @@ interface LinkButtonProps {
   icon: React.ReactNode;
   className?: string;
   children: ReactNode;
+  target?: '_blank' | '_parent' | '_self' | '_top'
 }
 
 export default function LinkButton({
@@ -13,12 +14,14 @@ export default function LinkButton({
   icon,
   className,
   children,
+  target
 }: LinkButtonProps) {
   return (
     <Link
       className={`group relative flex mt-5 pl-8 border border-yellowColor gap-x-5 
           items-center rounded-full py-4 overflow-hidden uppercase pr-20 ${className}`}
       href={to}
+      target={target}
     >
       <span className="block font-bold tracking-tighter">{children}</span>
       <span className="absolute right-0 flex items-center justify-center bg-yellowColor w-14 h-14 rounded-full">

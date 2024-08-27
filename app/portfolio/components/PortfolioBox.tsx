@@ -19,7 +19,7 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({banner,id,title}) => {
         alt="mahdi alaee | portfolio image"
         imageLoadedClass="h-52"
         imageLoadingClass="h-0"
-        loadingHeight={180}
+        loadingHeight={210}
       />
       {/* hover element */}
       <div

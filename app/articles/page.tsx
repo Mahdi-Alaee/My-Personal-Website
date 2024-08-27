@@ -3,8 +3,9 @@ import { getArticles } from "@/graphql/queries";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Blog'
-}
+  title: "Blog",
+};
+export const revalidate = 10;
 
 const Articles: React.FC = async () => {
   const data = await getArticles();
