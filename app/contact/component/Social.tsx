@@ -11,7 +11,7 @@ const Social: React.FC<SocialProps> = ({ to, icon }) => {
   return (
     <Link
       href={to}
-      className="bg-gray-300 dark:bg-midBrown rounded-full p-3 transition-all duration-200 cursor-pointer hover:bg-yellowColor"
+      className="block bg-gray-300 dark:bg-midBrown rounded-full p-3 transition-all duration-200 cursor-pointer hover:dark:bg-yellowColor hover:bg-yellowColor"
       target="_blank"
     >
       {icon}

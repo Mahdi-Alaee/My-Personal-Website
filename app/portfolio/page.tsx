@@ -20,7 +20,7 @@ const Portfolio: React.FC<PortfolioProps> = async ({ searchParams }) => {
 
   return (
     <div
-      className={`max-w-xl mx-auto px-6 pt-32 sm:pt-16 md:max-w-3xl lg:max-w-7xl lg:px-24 ${
+      className={`max-w-xl mx-auto px-6 pt-32 pb-6 sm:pt-16 md:max-w-3xl lg:max-w-7xl lg:px-24 ${
         isModalOpen ? "overflow-hidden h-screen" : ""
       }`}
     >
@@ -30,7 +30,7 @@ const Portfolio: React.FC<PortfolioProps> = async ({ searchParams }) => {
           works
         </span>
         <div
-          className="fixed z-10 text-3xl p-5 w-full left-0 right-0  top-0 m-auto bg-white dark:bg-darkBrown 
+          className="fixed z-10 text-3xl p-5 w-full left-0 right-0  top-0 m-auto bg-gray-300 dark:bg-darkBrown 
            flex items-center sm:absolute sm:bottom-0 sm:w-max sm:text-6xl sm:bg-transparent sm:dark:bg-transparent"
         >
           <span>my</span> <span className="text-yellowColor">portfolio</span>
@@ -38,7 +38,7 @@ const Portfolio: React.FC<PortfolioProps> = async ({ searchParams }) => {
       </h1>
 
       {/* content */}
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:mt-20 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 sm:mt-20 lg:grid-cols-2">
         {portfolio!.map(({ _id, title, banner }) => (
           <PortfolioBox
             key={_id}

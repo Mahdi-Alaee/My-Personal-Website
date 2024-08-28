@@ -22,14 +22,14 @@ const Article: React.FC<ArticleProps> = async ({ params }) => {
         <div
           className="fixed z-10 text-3xl p-5 w-full left-0 right-0  top-0 m-auto 
            flex items-center sm:absolute sm:bottom-0 sm:w-max sm:text-6xl dark:bg-darkBrown 
-           bg-white sm:bg-transparent sm:dark:bg-transparent"
+           bg-gray-300 sm:bg-transparent sm:dark:bg-transparent"
         >
           <span>my</span> <span className="text-yellowColor">BLOG</span>
         </div>
       </h2>
 
       {/* content */}
-      <div className="px-12 mx-auto sm:px-6 sm:max-w-3xl">
+      <div className="px-4 -mt-12 mb-6 mx-auto sm:px-12 sm:max-w-3xl">
         {/* article infos */}
         <ul className="flex flex-col gap-y-3 md:gap-x-2 md:flex-row sm:mt-14">
           <li className="flex gap-x-2">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Component, ReactNode } from "react";
 import { IconType } from "react-icons";
 
@@ -5,11 +6,12 @@ interface ContactBoxProps {
   title: string;
   content: string;
   icon: ReactNode;
+  href:string
 }
 
-const ContactBox: React.FC<ContactBoxProps> = ({ title, content, icon }) => {
+const ContactBox: React.FC<ContactBoxProps> = ({ title, content, icon,href }) => {
   return (
-    <div className="flex items-center gap-x-4">
+    <Link href={href} className="flex items-center gap-x-4">
       {/* icon */}
       <div className="text-4xl text-yellowColor">{icon}</div>
 
@@ -20,7 +22,7 @@ const ContactBox: React.FC<ContactBoxProps> = ({ title, content, icon }) => {
         {/* content */}
         <p>{content}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

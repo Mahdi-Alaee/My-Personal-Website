@@ -17,7 +17,7 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({banner,id,title}) => {
         className="object-cover"
         src={banner}
         alt="mahdi alaee | portfolio image"
-        imageLoadedClass="h-52"
+        imageLoadedClass="h-64 md:h-96 lg:h-64"
         imageLoadingClass="h-0"
         loadingHeight={210}
       />
