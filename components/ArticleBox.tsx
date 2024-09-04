@@ -22,6 +22,7 @@ const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
           imageLoadedClass="h-60 sm:h-72 md:h-52 lg:h-64 xl:h-52"
           imageLoadingClass="h-0"
           loadingHeight={208}
+          loadingClass="w-full"
         />
       </Link>
       {/* title */}

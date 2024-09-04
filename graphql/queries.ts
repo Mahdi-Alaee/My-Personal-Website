@@ -131,10 +131,7 @@ export async function getPortfolioById(id: string) {
       portfolioId: id,
     },
     fetchPolicy: "no-cache",
-  });
-
-  console.log({Portfolio});
-  
+  });  
 
   return Portfolio;
 }

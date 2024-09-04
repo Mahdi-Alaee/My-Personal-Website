@@ -98,8 +98,11 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
                   <span className="shrink-0">languages and tools : </span>
                   {/* content */}
                   <span className="font-medium text-yellowColor">
-                    {portfolio?.tags?.map((tag) => (
-                      <span key={tag?._id}>{tag?.body}, </span>
+                    {portfolio?.tags?.map((tag, index) => (
+                      <span key={tag?._id}>
+                        {tag?.body}
+                        {portfolio.tags?.length! - 1 > index && ", "}
+                      </span>
                     ))}
                   </span>
                 </div>

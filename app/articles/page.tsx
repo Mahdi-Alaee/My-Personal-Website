@@ -1,6 +1,7 @@
 import ArticleBox from "@/components/ArticleBox";
 import { getArticles } from "@/graphql/queries";
 import { Metadata } from "next";
+import Loading from "../loading";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -10,7 +11,7 @@ export const revalidate = 10;
 const Articles: React.FC = async () => {
   const data = await getArticles();
   const articles = data?.items;
-
+  
   return (
     <div className="pt-24 sm:pt-16">
       {/* title */}
