@@ -40,14 +40,16 @@ const Portfolio: React.FC<PortfolioProps> = async ({ searchParams }) => {
 
       {/* content */}
       <div className="grid grid-cols-1 gap-8 sm:mt-20 lg:grid-cols-2">
-        {portfolio!.map(({ _id, title, banner }) => (
+        {(portfolio && portfolio?.length > 0) ? portfolio.map(({ _id, title, banner }) => (
           <PortfolioBox
             key={_id}
             banner={banner?.url!}
             id={_id}
             title={title!}
           />
-        ))}
+        )) : (
+          <p className="text-red-500">No portfolio is avalible 😞</p>
+        )}
       </div>
 
       <PortfolioModal
