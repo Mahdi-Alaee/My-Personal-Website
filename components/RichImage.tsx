@@ -9,6 +9,7 @@ interface RichImageProps extends ImageProps {
   imageLoadedClass?: string;
   loadingHeight?: number;
   loadingClass?: string;
+  isImg?: boolean;
 }
 
 export default function RichImage({
@@ -20,6 +21,7 @@ export default function RichImage({
   loadingHeight,
   loadingClass,
   style,
+  isImg = false,
 }: RichImageProps) {
   const [imageLoading, setImageLoading] = useState(true);
 
@@ -29,22 +31,38 @@ export default function RichImage({
         className={`dark:bg-black bg-gray-100 justify-center items-center ${
           imageLoading ? "flex" : "hidden"
         } ${loadingClass}`}
-        style={{height: loadingHeight}}
+        style={{ height: loadingHeight }}
       >
         <PropagateLoader color="#ffb400" />
       </div>
-
-      <Image
-        src={src}
-        alt={alt}
-        width="10000"
-        height="10000"
-        onLoad={() => setImageLoading(false)}
-        className={`${className} ${
-          imageLoading ? imageLoadingClass + ' opacity-0' : imageLoadedClass + ' opacity-100'
-        }`}
-        style={style}
-      />
+      {isImg ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={src as string}
+          alt={alt}
+          onLoad={() => setImageLoading(false)}
+          className={`${className} ${
+            imageLoading
+              ? imageLoadingClass + " opacity-0"
+              : imageLoadedClass + " opacity-100"
+          }`}
+          style={style}
+        />
+      ) : (
+        <Image
+          src={src}
+          alt={alt}
+          width="10000"
+          height="10000"
+          onLoad={() => setImageLoading(false)}
+          className={`${className} ${
+            imageLoading
+              ? imageLoadingClass + " opacity-0"
+              : imageLoadedClass + " opacity-100"
+          }`}
+          style={style}
+        />
+      )}
     </>
   );
 }

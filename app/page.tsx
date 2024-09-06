@@ -25,6 +25,7 @@ export default async function HomePage() {
           imageLoadedClass="h-full"
           imageLoadingClass="h-0"
           loadingClass="rounded-full w-full h-full lg:rounded-3xl"
+          isImg={true}
         />
       </div>
       {/* page content */}
