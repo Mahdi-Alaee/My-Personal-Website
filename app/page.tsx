@@ -2,6 +2,8 @@ import LinkButton from "@/components/LinkButton/LinkButton";
 import RichImage from "@/components/RichImage";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
+import Loading from "./loading";
+import { useState } from "react";
 
 export default async function HomePage() {
   return (

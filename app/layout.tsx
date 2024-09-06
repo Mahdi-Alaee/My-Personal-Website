@@ -3,6 +3,7 @@ import LayoutClient from "@/components/LayoutClient/LayoutClient";
 import Providers from "./providers";
 import { poppins } from "./fonts";
 import { Metadata } from "next";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: {
@@ -32,6 +33,7 @@ export default function RootLayout({
           <LayoutClient />
           <main>{children}</main>
         </Providers>
+        <Loading isFakeLoading={true} />
       </body>
     </html>
   );

@@ -14,6 +14,12 @@ const nextConfig = {
         port: "",
         protocol: 'https'        
       },
+      {
+        hostname: "mahdi-alaee.liara.run",
+        pathname: "/**",
+        port: "",
+        protocol: 'https'        
+      },
     ],
   },
 };
