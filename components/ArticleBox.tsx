@@ -9,7 +9,7 @@ import RichImage from "./RichImage";
 
 const ArticleBox: React.FC<Article> = ({ title, description, banner, _id }) => {
   return (
-    <div className="mx-auto shadow-xl rounded-md overflow-hidden max-w-lg dark:bg-darkBrown">
+    <div className="mx-auto max-w-full shadow-xl rounded-md overflow-hidden dark:bg-darkBrown">
       {/* banner */}
       <Link
         className="block border-b-[6px] border-yellowColor"

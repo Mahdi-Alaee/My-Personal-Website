@@ -29,6 +29,7 @@ const PersonalInfos: React.FC = () => {
             alt="mahdi alaee | مهدی علایی"
             className="object-cover w-full h-full rounded-full border-2 border-gray-800"
             loadingClass="w-full h-full rounded-full border-2 border-gray-800"
+            isImg={true}
           />
         </div>
         {/* personal data container */}
