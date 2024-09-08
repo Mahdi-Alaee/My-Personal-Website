@@ -243,6 +243,7 @@ export type AssetUrlArgs = {
   crop?: InputMaybe<Scalars['String']['input']>;
   format?: InputMaybe<Scalars['String']['input']>;
   height?: InputMaybe<Scalars['Int']['input']>;
+  inline?: InputMaybe<Scalars['Boolean']['input']>;
   preset?: InputMaybe<Scalars['String']['input']>;
   quality?: InputMaybe<Scalars['Int']['input']>;
   res?: InputMaybe<Scalars['String']['input']>;
