@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   title: 'About Me'
 }
 
+export const revalidate = 10;
+
 const About: React.FC = () => {
 
   return (

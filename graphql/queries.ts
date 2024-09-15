@@ -144,6 +144,7 @@ export async function getSkills() {
           _id
           title
           percentage
+          _publish_on
         }
       }
     }

@@ -13,6 +13,7 @@ const MySkills: React.FC = async () => {
         {skills!.map((skill) => (
           <SkillBox key={skill._id} percentage={+skill.percentage!} title={skill.title!} />
         ))}
+        <SkillBox percentage={99} title={'Sass'} />
       </div>
     </section>
   );

@@ -2,12 +2,11 @@ import { getPortfolio } from "@/graphql/queries";
 import PortfolioBox from "./components/PortfolioBox";
 import PortfolioModal from "./components/PortfolioModal";
 import { Metadata } from "next";
-import Loading from "../loading";
 
 export const metadata: Metadata = {
   title: "Portfolio",
 };
-export const revalidate = 120;
+export const revalidate = 10;
 
 interface PortfolioProps {
   searchParams: { show?: string; selectedPortfolio?: string };
