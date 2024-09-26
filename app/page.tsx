@@ -13,7 +13,7 @@ export default async function HomePage() {
     >
       {/* profile image */}
       <div
-        className="w-64 h-64 rounded-full border-2 border-gray-800  hidden 
+        className="w-64 h-64 rounded-full  hidden 
         mx-auto mb-10 sm:block lg:w-5/12 lg:h-full  
         lg:gap-x-12 lg:rounded-3xl lg:border-none lg:m-0 xl:w-4/12"
       >

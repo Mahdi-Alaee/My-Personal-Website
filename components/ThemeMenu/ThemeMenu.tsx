@@ -20,7 +20,7 @@ const ThemeMenu: React.FC<ThemeMenuProps> = ({ isThemeMenuOpen }) => {
 
   return (
     <div
-      className={`fixed top-20 md:top-6 bg-gray-300 dark:bg-darkBrown text-black py-4 px-8 transition-all duration-300 z-10 
+      className={`fixed z-40 top-20 md:top-6 bg-gray-300 dark:bg-darkBrown text-black py-4 px-8 transition-all duration-300
     ${
       isThemeMenuOpen ? "opacity-100 right-20" : "opacity-0 -right-72"
     } rounded-lg`}
