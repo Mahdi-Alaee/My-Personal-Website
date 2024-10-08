@@ -101,7 +101,7 @@ const PersonalInfos: React.FC = () => {
         </div>
         <LinkButton
           // to="https://s32.picofile.com/file/8478671018/Mahdi_Alaee.pdf.html"
-          to="https://s32.picofile.com/d/8478671018/da50655c-82fc-46bf-947e-f81ea70e8aa4/Mahdi_Alaee.pdf"
+          to="https://s32.picofile.com/file/8479617884/mahdi_alaee.pdf.html"
           icon={<FaDownload />}
           className="max-w-64 mt-8"
           target="_blank"
