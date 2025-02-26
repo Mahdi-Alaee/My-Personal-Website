@@ -459,6 +459,7 @@ export type ContentItemsWhereInput = {
 };
 
 export type Context = {
+  /** @deprecated Will be removed in the next version. */
   countries?: Maybe<Array<Scalars['String']['output']>>;
   /** The unique identifier for an A/B test or personalization block used for analytics. */
   group_id?: Maybe<Scalars['String']['output']>;
@@ -1089,7 +1090,7 @@ export type Query = {
   Contact?: Maybe<Contact>;
   /** Retrieve multiple Contacts. */
   Contacts?: Maybe<Contacts>;
-  /** Retrieve content items from all models. */
+  /** Retrieve items from different model types at once. */
   ContentItems?: Maybe<ContentItems>;
   /** Retrieve a single Education. */
   Education?: Maybe<Education>;

@@ -58,7 +58,7 @@ const PersonalInfos: React.FC = () => {
           </p>
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
             <span className="opacity-80">Age :</span>{" "}
-            <span className="font-semibold">18 Years</span>
+            <span className="font-semibold">19 Years</span>
           </p>
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1 lg:flex-col xl:flex-row">
             <span className="opacity-80">Email :</span>{" "}
@@ -100,8 +100,7 @@ const PersonalInfos: React.FC = () => {
           </p>
         </div>
         <LinkButton
-          // to="https://s32.picofile.com/file/8478671018/Mahdi_Alaee.pdf.html"
-          to="https://s32.picofile.com/file/8479617884/mahdi_alaee.pdf.html"
+          to="https://s33.picofile.com/file/8483114334/mahdi_alaee.pdf.html"
           icon={<FaDownload />}
           className="max-w-64 mt-8"
           target="_blank"
