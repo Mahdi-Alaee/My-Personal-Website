@@ -2,7 +2,6 @@ import LinkButton from "@/components/LinkButton/LinkButton";
 import Link from "next/link";
 import { FaDownload } from "react-icons/fa";
 import InfoBox from "./InfoBox";
-import Image from "next/image";
 import RichImage from "@/components/RichImage";
 
 const PersonalInfos: React.FC = () => {
@@ -86,7 +85,7 @@ const PersonalInfos: React.FC = () => {
           </p>
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
             <span className="opacity-80">Language :</span>{" "}
-            <span className="font-semibold">English : 70%</span>
+            <span className="font-semibold">English : 80%</span>
           </p>
           <p className="text-sm flex flex-col sm:flex-row sm:gap-x-1">
             <span className="opacity-80">GitHub :</span>{" "}
